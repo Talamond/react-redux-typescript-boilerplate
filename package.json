@@ -60,7 +60,11 @@
     "webpack-dev-server": "^3.10.1"
   },
   "dependencies": {
+    "@types/lodash": "^4.14.167",
     "classnames": "^2.2.6",
+    "jsweetman-redux-typed": "^2.0.1",
+    "lodash": "^4.17.20",
+    "moment": "^2.29.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-redux": "^7.1.1",
