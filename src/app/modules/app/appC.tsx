@@ -1,7 +1,8 @@
 import { Header } from 'app/components/Header/header';
 import React from 'react';
-import {  RouteComponentProps } from 'react-router';
-
+import {  Route, RouteComponentProps } from 'react-router';
+import { TimelineM } from '../timeline/timelineM';
+require('./app.css');
 
 
 export namespace App {
@@ -51,7 +52,7 @@ export const AppC = ({ history, location }: App.Props) => {
   return (<div className="app-root">
       <Header />
       <div className="app-main">
-
+        <Route path="/" component={TimelineM}/>
       </div>
     </div>
   );

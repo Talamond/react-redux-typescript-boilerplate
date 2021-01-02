@@ -1,0 +1,51 @@
+@import '../../constants.css';
+
+.timeline {
+  position: relative;
+}
+.timeline > img {
+  width: 100%;
+  height: 100%;
+
+}
+.timeline__profile {
+  height: 0px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 10vh;
+  width: 100%;
+  border-radius: 50%;
+}
+.timeline__jonwrapper {
+  position: relative;
+  width: 100%;
+  height: 25vw;
+}
+.timeline__jon {
+  position: absolute;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+  border-radius: 50%;
+  width: 25vw;
+  @media --mobile {
+    border: 2px solid $neutral;
+  }
+  @media --pad {
+    border: 3px solid $neutral;
+  }
+  @media -desktop {
+    border: 5px solid $neutral;
+  }
+}
+.timeline__title {
+  top: 15vh;
+  padding-top: 10px;
+  font-size: 4vw;
+  color: var(--niceGrey);
+  width: 100%;
+  text-align: center;
+  font-weight: 200;
+}

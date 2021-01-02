@@ -7,4 +7,27 @@
   --fresh: #4abdac;
   --niceGrey: #edeeef;
   --darkGrey: #222222;
+  --font: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Cantarell", "Open Sans", "Helvetica Neue", "Ubuntu", sans-serif;
+
+  --linkHover: lighten($carbon, 80%);
+
+  --headerHeight: 50px;
+  --footerHeight: 350px;
+
+  --header: var(--darkGrey);
+  --backgroundOdd: var(--niceGrey);
+  --backgroundEven: white;
+  --backgroundEducation: lighten($darkGrey, 5%);
+  /* TODO: redo the main text color */
+  --mainText: darken($carbon, 30%);
+  --subText: $carbon;
+  --phoneMinWidth: 320px;
+  --phoneMaxWidth: 479px;
+  --padMinWidth: 480px;
+  --padMaxWidth: 767px;
+  --desktopMinWidth: 768px;
 }
+
+@custom-media --mobile (max-width: var(--phoneMaxWidth));
+@custom-media --pad (min-width: var(--padMinWidth)) and (max-width: var(--padMaxWidth));
+@custom-media --desktop (min-width: var(--desktopMinWidth));
