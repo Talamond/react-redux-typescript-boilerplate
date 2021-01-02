@@ -1,0 +1,16 @@
+
+.timeline-elem {
+  padding-right: 6vw;
+  padding-left: 6vw;
+  padding-bottom: 40px;
+}
+.timeline-elem.even {
+  background-color: var(--backgroundEven);
+}
+.timeline-elem.odd {
+  background-color: var(--backgroundOdd);
+}
+.timeline-elem.education {
+  background-color: var(--backgroundEducation);
+
+}
