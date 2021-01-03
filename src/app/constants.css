@@ -20,8 +20,8 @@
   --backgroundEven: white;
   --backgroundEducation: lighten($darkGrey, 5%);
   /* TODO: redo the main text color */
-  --mainText: darken($carbon, 30%);
-  --subText: $carbon;
+  --mainText: var(--carbon);
+  --subText: var(--carbon);
   --phoneMinWidth: 320px;
   --phoneMaxWidth: 479px;
   --padMinWidth: 480px;
@@ -29,6 +29,6 @@
   --desktopMinWidth: 768px;
 }
 
-@custom-media --mobile (max-width: var(--phoneMaxWidth));
-@custom-media --pad (min-width: var(--padMinWidth)) and (max-width: var(--padMaxWidth));
-@custom-media --desktop (min-width: var(--desktopMinWidth));
+@custom-media --mobile (max-width: 479px);
+@custom-media --pad (min-width: 480px) and (max-width: 767px);
+@custom-media --desktop (min-width: 768px);

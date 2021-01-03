@@ -71,6 +71,7 @@ module.exports = {
                   /* use stage 2 features (defaults) */
                   stage: 2
                 }),
+                require('postcss-custom-media')(),
                 require('postcss-reporter')(),
                 require('postcss-browser-reporter')({
                   disabled: isProduction

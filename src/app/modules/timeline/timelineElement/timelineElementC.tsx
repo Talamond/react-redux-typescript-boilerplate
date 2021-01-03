@@ -16,7 +16,6 @@ export interface Props {
 
 export const TimelineElementC = (props: Props) => {
   const {timelineType, timelineElem} = props;
-  // {this.renderContent()}
   return <div className={cn('timelineElement', timelineType)}>
     <h1 className="timelineElement__jobTitle">{timelineElem.title}</h1>
     <h2 className="timelineElement__employer">{timelineElem.employer}</h2>

@@ -1,5 +1,27 @@
+@import '../../constants.css';
+
 .tabArea {
   position: relative;
+}
+@media (--mobile) {
+  .tabArea {
+    width: 300px;
+    height: 320px;
+  }
+}
+
+@media (--pad) {
+  .tabArea {
+    width: 600px;
+    height: 500px;
+  }
+}
+
+@media (--desktop) {
+  .tabArea {
+    width: 600px;
+    height: 500px;
+  }
 }
 
 .tabArea > .animate-tabs {
@@ -46,3 +68,25 @@
   border-bottom: none;
   padding-top: 2px;
 }
+
+
+/*
+.tabArea-root {
+  .tab-content {
+    @include flexboxJustify(space-around);
+    position: relative;
+    @include mobile {
+      height: 280px;
+    }
+    .description {
+      color: $mainText;
+      font-style: italic;
+      text-align: center;
+    }
+  }
+  .tagcloud-root {
+    margin: 0 auto;
+    width: 400px;
+  }
+}
+*/

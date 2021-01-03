@@ -5,7 +5,7 @@ import OnVisible from 'react-on-visible';
 import { checkDeviceSize } from 'app/utils/responsiveHelper';
 import _ from 'lodash';
 import { TabArea } from 'app/components/tabArea/tabArea';
-require('./timelineElement.css');
+require('./timelineContent.css');
 
 const isIE = navigator.userAgent.indexOf('MSIE') !== -1 || navigator.appVersion.indexOf('Trident/') > 0;
 
@@ -60,7 +60,7 @@ export const TimelineContentC = (props: Props) => {
     });
   }
   return <>
-    {windowWidth < NO_IMAGE_WIDTH && <img src={image} className={`id${id} ${isIE ? 'ie' : 'notIe'}`} />}
+    {windowWidth >= NO_IMAGE_WIDTH && <img src={image} className={`timelineContent__image id${id} ${isIE ? 'ie' : 'notIe'}`} />}
     <TabArea tabContents={tabContents} selectedTab={selectedTab} onTabSelect={(tabIndex) => onTabSelect(id, tabIndex)}/>
   </>;
 };
