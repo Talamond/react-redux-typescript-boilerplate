@@ -9,13 +9,12 @@
   --darkGrey: #222222;
   --font: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Cantarell", "Open Sans", "Helvetica Neue", "Ubuntu", sans-serif;
 
-  --linkHover: lighten($carbon, 80%);
+  --linkHover: #ffffff;
 
   --headerHeight: 50px;
   --footerHeight: 350px;
   --tabHeight: 27px;
 
-  --header: var(--darkGrey);
   --backgroundOdd: var(--niceGrey);
   --backgroundEven: white;
   --backgroundEducation: lighten($darkGrey, 5%);

@@ -1,6 +1,8 @@
 
 import * as moment from 'moment/moment.js';
+import { ROOT_PATH } from '../app/appF';
 
+export const TIMELINE_PATH = `${ROOT_PATH}`;
 export interface Skill {
   label: string;
   weight: number;

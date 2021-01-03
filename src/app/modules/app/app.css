@@ -1,7 +1,6 @@
 @import '../../constants.css';
 
 .app-root {
-  margin-top: var(--headerHeight);
   max-width: 100%;
 }
 

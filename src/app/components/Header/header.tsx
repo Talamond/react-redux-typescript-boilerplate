@@ -1,29 +1,28 @@
+import { navigate } from 'app/utils/navHelper';
 import React from 'react';
+require('./header.css');
 
-export namespace Header {
-  export interface Props {}
+// const github = require('../../../assets/images/github.svg');
+
+export interface Props {
+  headers: ({
+    label: string;
+    path: string;
+  })[];
 }
 
-export const Header = (): JSX.Element => {
-  // const handleSave = React.useCallback(
-  //   (text: string) => {
-  //     if (text.length) addTodo({ text });
-  //   },
-  //   [addTodo]
-  // );
-  /*
-
-      <div className="header-elem" onClick={(e) => header.onClick(e)}>{header.label}</div>
-      <div className="header-elem" onClick={(e) => header.onClick(e)}>{header.label}</div>
-  */
+export const Header = (props: Props): JSX.Element => {
 
   return (
-    <header>
-    <div className="github-container">
-      <a href="https://github.com/Talamond">
-        <img src="../../../assets/images/github.svg" />
-      </a>
-    </div>
+    <header className="header">
+      {props.headers.map((header) => (<div className="header__elem" key={header.label} onClick={(e: React.MouseEvent<HTMLElement>) => navigate(e, header.path)}>{header.label}</div>))}
+      <div className="header__githubContainer">
+        <a href="https://github.com/Talamond">
+          <svg>
+            <use xlinkHref="../../../assets/images/github.svg"/>
+          </svg>
+        </a>
+      </div>
     </header>
   );
 };
