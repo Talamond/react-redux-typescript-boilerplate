@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
 import { RouteComponentProps } from 'react-router';
 import ProgressiveImage from 'react-progressive-image';
-import style from './timeline.css';
 import { TimelineState } from './timelineR';
 import { EducationElementC } from './timelineElement/educationElementC';
 import { TimelineElementC } from './timelineElement/timelineElementC';
 import { TimelineActions } from './timelineA';
+require('./timeline.css');
 
 
 export interface Props {}
@@ -19,15 +19,15 @@ export const TimelineC = (props: Props & ConnectedProps) => {
   const {timelineState: {timelineElements, selectedTabs, summaryWidth}, actions} = props;
   useEffect(() => actions.fetchData(), []);
 
-  return (<div className={style.timeline}>
+  return (<div className="timeline">
       <ProgressiveImage src="../../assets/images/mainpic.jpg" placeholder="../../assets/images/mainpicSmall.jpg">
         {(src: string) => <img src={src} alt='an image'/>}
       </ProgressiveImage>
-      <div className={style.timeline__profile}>
-        <div className={style.timeline__jonwrapper}>
-          <img src="../../assets/images/me.jpeg" className={style.timeline__jon} />
+      <div className="timeline__profile">
+        <div className="timeline__jonwrapper">
+          <img src="../../assets/images/me.jpeg" className="timeline__jon" />
         </div>
-        <div className={style.timeline__title}>
+        <div className="timeline__title">
           <div>Jonathan Sweetman</div>
           <div>Front-end Developer</div>
         </div>

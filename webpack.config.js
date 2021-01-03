@@ -1,6 +1,7 @@
 var webpack = require('webpack');
 var path = require('path');
 var package = require('./package.json');
+var TerserPlugin = require('terser-webpack-plugin');
 
 // variables
 var isProduction = process.argv.indexOf('-p') >= 0 || process.env.NODE_ENV === 'production';
@@ -56,9 +57,7 @@ module.exports = {
             query: {
               sourceMap: !isProduction,
               importLoaders: 1,
-              modules: {
-                localIdentName: isProduction ? '[hash:base64:5]' : '[local]__[hash:base64:5]'
-              }
+              modules: false
             }
           },
           {
@@ -81,6 +80,7 @@ module.exports = {
           }
         ]
       },
+
       // static assets
       { test: /\.html$/, use: 'html-loader' },
       { test: /\.(a?png|svg)$/, use: 'url-loader?limit=10000' },
@@ -106,7 +106,19 @@ module.exports = {
         }
       }
     },
-    runtimeChunk: true
+    runtimeChunk: true,
+		minimizer: [
+			new TerserPlugin({
+				sourceMap: true,
+				parallel: true,
+				terserOptions: {
+					keep_classnames: true
+					// compress: {
+					// 	drop_debugger: false
+					// }
+				}
+			})
+		]
   },
   plugins: [
     new webpack.EnvironmentPlugin({
