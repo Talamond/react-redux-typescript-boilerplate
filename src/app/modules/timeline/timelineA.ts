@@ -12,7 +12,7 @@ export class FetchData extends Action {
 
 @typeName(`SELECT_TAB${SUFFIX}`)
 export class SelectTab extends Action {
-	constructor(public id: string, public tabIndex: number) {
+	constructor(public id: number, public tabIndex: number) {
 		super();
 	}
 }
@@ -26,12 +26,12 @@ export class ChangeDimensions extends Action {
 
 export interface TimelineActions {
 	fetchData(): any;
-	selectTab(id: string, tabIndex: number): any;
+	selectTab(id: number, tabIndex: number): any;
 	changeDimensions(width: number, height: number): any;
 }
 
 export const timelineActionCreators: TimelineActions = {
 	fetchData: (): Action => new FetchData(getResumeData()),
-	selectTab: (id: string, tabIndex: number): Action => new SelectTab(id, tabIndex),
+	selectTab: (id: number, tabIndex: number): Action => new SelectTab(id, tabIndex),
 	changeDimensions: (width: number, height: number): Action => new ChangeDimensions(width, height)
 };

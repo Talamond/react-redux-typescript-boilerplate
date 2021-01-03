@@ -10,12 +10,17 @@ export interface TimelineElement {
   id: number;
   startDate: moment.Moment;
   endDate: moment.Moment;
-  summary: string;
+  summary?: string;
   title: string;
-  subTitle: string;
+  subTitle?: string;
   employer: string;
   type: string;
   color: string;
   image: any; // todo: maybe image path
   skills?: Skill[];
+  details?: string[];
+  description?: string;
+  descriptions?: {
+    [project: string]: string;
+  }
 }

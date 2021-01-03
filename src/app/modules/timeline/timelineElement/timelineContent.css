@@ -1,0 +1,42 @@
+.timelineContent__details {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  height: 100%;
+}
+
+.animate-detail:first-child {
+  padding-top: 10px;
+}
+.animate-detail›:last-child {
+  padding-bottom: 20px;
+}
+.animate-detail .timelineContent__detail {
+    animation-name: fadein;
+    animation-duration: 2s;
+    opacity: 1;
+
+}
+
+.timelineContent__detail {
+  position: relative;
+  opacity: 0;
+  color: var(--mainText);
+  font-style: italic;
+  text-align: center;
+  @media --mobile {
+    font-size: 15px;
+  }
+  @media --pad {
+    font-size: 22px;
+  }
+  @media --desktop {
+    font-size: 22px;
+  }
+}
+
+.timelineContent__description {
+  color: var(--mainText);
+  font-style: italic;
+  text-align: center;
+}

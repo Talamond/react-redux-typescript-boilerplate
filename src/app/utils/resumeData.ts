@@ -1,7 +1,8 @@
+import { TimelineElement } from 'app/modules/timeline/timelineF';
 import {createDate} from './dateHelper';
 
 // TODO, pull descriptions from text file
-export function getResumeData() {
+export function getResumeData(): TimelineElement[] {
   return [
     {
       id: 1,
