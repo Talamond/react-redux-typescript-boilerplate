@@ -1,3 +1,4 @@
+import { getResumeData } from 'app/utils/resumeData';
 import { typeName, Action } from 'jsweetman-redux-typed';
 
 const SUFFIX = '__TIMELINE';
@@ -24,13 +25,13 @@ export class ChangeDimensions extends Action {
 }
 
 export interface TimelineActions {
-	fetchData(data: any[]): Action;
-	selectTab(id: string, tabIndex: number): Action;
-	changeDimensions(width: number, height: number): Action;
+	fetchData(): any;
+	selectTab(id: string, tabIndex: number): any;
+	changeDimensions(width: number, height: number): any;
 }
 
 export const timelineActionCreators: TimelineActions = {
-	fetchData: (data: any[]): Action => new FetchData(data),
+	fetchData: (): Action => new FetchData(getResumeData()),
 	selectTab: (id: string, tabIndex: number): Action => new SelectTab(id, tabIndex),
 	changeDimensions: (width: number, height: number): Action => new ChangeDimensions(width, height)
 };
