@@ -26,7 +26,7 @@ h2 {
   margin: 0px;
   font-size: 24px;
   /* TODO: redo the text color */
-  background-color: var(--darkGrey);
+  color: var(--darkGrey);
   font-weight: 200;
 }
 
@@ -34,7 +34,7 @@ h3 {
   margin: 0px;
   font-size: 20px;
   /* TODO: redo the text color */
-  background-color: var(--darkGrey);
+  olor: var(--darkGrey);
   font-weight: 200;
 }
 
@@ -43,7 +43,7 @@ h4 {
   margin: 0px;
   font-size: 18px;
   /* TODO: redo the text color */
-  background-color: var(--darkGrey);
+  color: var(--darkGrey);
   font-weight: 200;
 }
 

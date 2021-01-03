@@ -1,11 +1,11 @@
 import React from 'react';
 import { TimelineElement } from '../timelineF.js';
 import { Action } from 'jsweetman-redux-typed';
-import style from './timelineElement.css';
 import OnVisible from 'react-on-visible';
 import { checkDeviceSize } from 'app/utils/responsiveHelper';
 import _ from 'lodash';
 import { TabArea } from 'app/components/tabArea/tabArea';
+require('./timelineElement.css');
 
 const isIE = navigator.userAgent.indexOf('MSIE') !== -1 || navigator.appVersion.indexOf('Trident/') > 0;
 
@@ -35,11 +35,11 @@ export const TimelineContentC = (props: Props) => {
   const tabContents = [
     {
       name: 'Details',
-      content: <div className={style.timelineContent__details}>
+      content: <div className="timelineContent__details">
         {details && details.map((detail, index) => {
           return (
             <OnVisible key={index} visibleClassName="animate-detail">
-              <div key={index} className={style.timelineContent__detail}>{detail}</div>
+              <div key={index} className="timelineContent__detail">{detail}</div>
             </OnVisible>
           );
         })}
@@ -51,12 +51,12 @@ export const TimelineContentC = (props: Props) => {
     },
     {
       name: 'Info',
-      content: <div className={style.timelineContent__description} style={{fontSize: fontSize + 'px'}}>{description}</div>
+      content: <div className="timelineContent__description" style={{fontSize: fontSize + 'px'}}>{description}</div>
     }
   ];
   if (descriptions) {
     _.forIn(descriptions, (desc, project) => {
-      tabContents.push({name: project, content: <div className={style.timelineContent__description} style={{fontSize: fontSize + 'px'}}>{desc}</div>});
+      tabContents.push({name: project, content: <div className="timelineContent__description" style={{fontSize: fontSize + 'px'}}>{desc}</div>});
     });
   }
   return <>
