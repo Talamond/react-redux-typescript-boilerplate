@@ -85,13 +85,19 @@ module.exports = {
       // static assets
       { test: /\.html$/, use: 'html-loader' },
       			// { test: /\.jpg$/, use: 'file-loader' },
-      { test: /\.(a?png|svg)$/, use: 'url-loader?limit=10000' },
+      // { test: /\.(a?png|svg)$/, use: 'url-loader?limit=10000' },
+			{ test: /\.(png)$/, use: 'url-loader?limit=10000' },
 
-			{
+			// {
+			// 	test: /\.svg$/,
+      //   exclude: [/node_modules/, /IBM_logo\.svg/, /n8\.svg/, /ontario\.svg/, /sqlpower\.svg/],
+      //   use: 'svg-react-loader'
+      // },
+      {
 				test: /\.svg$/,
-        exclude: [/node_modules/, /IBM_logo\.svg/, /n8\.svg/, /ontario\.svg/, /sqlpower\.svg/],
-        use: 'svg-react-loader'
-      },
+				exclude: /node_modules/,
+				use: 'svg-react-loader'
+			},
       {
         test: /\.(jpe?g|gif|bmp|mp3|mp4|ogg|wav|eot|ttf|woff|woff2)$/,
         use: 'file-loader'
