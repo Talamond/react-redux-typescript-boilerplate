@@ -1,10 +1,11 @@
 import React from 'react';
 import { TimelineElement } from '../timelineF.js';
-import { Action } from 'jsweetman-redux-typed';
 import OnVisible from 'react-on-visible';
 import { checkDeviceSize } from 'app/utils/responsiveHelper';
 import _ from 'lodash';
 import { TabArea } from 'app/components/tabArea/tabArea';
+import { useDispatch } from 'react-redux';
+import { SelectTab } from '../timelineA';
 require('./timelineContent.css');
 
 const isIE = navigator.userAgent.indexOf('MSIE') !== -1 || navigator.appVersion.indexOf('Trident/') > 0;
@@ -14,13 +15,13 @@ const NO_IMAGE_WIDTH = 1100;
 export interface Props {
   timelineElem: TimelineElement;
   selectedTab: number;
-  onTabSelect: (id: number, tabIndex: number) => Action;
   windowWidth: number;
   timelineType: 'odd' | 'even' | 'education';
 }
 
 export const TimelineContentC = (props: Props) => {
-  const {timelineElem: {description, descriptions, details, id, image}, selectedTab, windowWidth, onTabSelect} = props;
+  const dispatch = useDispatch();
+  const {timelineElem: {description, descriptions, details, id, image}, selectedTab, windowWidth} = props;
   let fontSize = 22;
   let maxLength = 750;
   let divisor = 50;
@@ -61,6 +62,6 @@ export const TimelineContentC = (props: Props) => {
   }
   return <>
     {windowWidth >= NO_IMAGE_WIDTH && <img src={image} className={`timelineContent__image id${id} ${isIE ? 'ie' : 'notIe'}`} />}
-    <TabArea tabContents={tabContents} selectedTab={selectedTab} onTabSelect={(tabIndex) => onTabSelect(id, tabIndex)}/>
+    <TabArea tabContents={tabContents} selectedTab={selectedTab} onTabSelect={(tabIndex) => dispatch(new SelectTab(id, tabIndex) as any)}/>
   </>;
 };

@@ -1,8 +1,8 @@
 import { Header } from 'app/components/header/header';
 import React from 'react';
-import {  Route, RouteComponentProps } from 'react-router';
+import {  Redirect, Route, RouteComponentProps } from 'react-router';
+import { TimelineC } from '../timeline/timelineC';
 import { TIMELINE_PATH } from '../timeline/timelineF';
-import { TimelineM } from '../timeline/timelineM';
 import { HEADER_ELEMS } from './appF';
 require('./app.css');
 
@@ -54,7 +54,10 @@ export const AppC = ({ history, location }: App.Props) => {
   return (<div className="app-root">
       <Header headers={HEADER_ELEMS}/>
       <div className="app-main">
-        <Route path={TIMELINE_PATH} component={TimelineM}/>
+        <Route exact path="/">
+            <Redirect to={TIMELINE_PATH} />
+        </Route>
+        <Route path={TIMELINE_PATH} component={TimelineC}/>
       </div>
     </div>
   );

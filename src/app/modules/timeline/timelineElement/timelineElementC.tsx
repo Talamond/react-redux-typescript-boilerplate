@@ -2,14 +2,12 @@ import { momentToString } from '../../../utils/dateHelper';
 import cn from 'classnames';
 import React from 'react';
 import { TimelineElement } from '../timelineF.js';
-import { Action } from 'jsweetman-redux-typed';
 import { TimelineContentC } from './timelineContentC';
 require('./timelineElement.css');
 
 export interface Props {
   timelineElem: TimelineElement;
   selectedTab: number;
-  onTabSelect: (id: number, tabIndex: number) => Action;
   windowWidth: number;
   timelineType: 'odd' | 'even' | 'education';
 }
