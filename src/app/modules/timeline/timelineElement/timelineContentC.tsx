@@ -6,6 +6,7 @@ import _ from 'lodash';
 import { TabArea } from 'app/components/tabArea/tabArea';
 import { useDispatch } from 'react-redux';
 import { SelectTab } from '../timelineA';
+import { TagCloud } from 'app/components/tagCloud/tagCloud';
 require('./timelineContent.css');
 
 const isIE = navigator.userAgent.indexOf('MSIE') !== -1 || navigator.appVersion.indexOf('Trident/') > 0;
@@ -21,10 +22,11 @@ export interface Props {
 
 export const TimelineContentC = (props: Props) => {
   const dispatch = useDispatch();
-  const {timelineElem: {description, descriptions, details, id, image}, selectedTab, windowWidth} = props;
+  const {timelineElem: {skills, description, descriptions, details, id, image}, selectedTab, windowWidth} = props;
   let fontSize = 22;
   let maxLength = 750;
   let divisor = 50;
+  const factor = skills ? (skills.length < 7 ? 1 : 1.5) : 1.5;
   if (checkDeviceSize() === 'mobile') {
     fontSize = 14;
     maxLength = 500;
@@ -48,7 +50,7 @@ export const TimelineContentC = (props: Props) => {
     },
     {
       name: 'Skills',
-      content: <div>TagCloud</div>
+      content: <div><TagCloud id={`${id}`} data={skills} height={425} width={425} factor={factor}/></div>
     },
     {
       name: 'Info',

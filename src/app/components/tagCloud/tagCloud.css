@@ -1,0 +1,11 @@
+@import '../../constants.css';
+
+.tagCloud>div {
+  opacity: 0.1;
+}
+
+.tagCloud>div.animate {
+  animation-name: fadein;
+  animation-duration: 1s;
+  opacity: 1;
+}
