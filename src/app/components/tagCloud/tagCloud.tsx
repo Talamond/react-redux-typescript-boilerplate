@@ -1,7 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {D3TagCloud} from './d3TagCloud';
-import OnVisible from 'react-on-visible';
-import cn from 'classnames';
+import ReactWordcloud from 'react-wordcloud';
 
 require('./tagCloud.css');
 
@@ -11,17 +9,16 @@ interface Props {
   width: number;
   height: number;
   color: string;
-  degrees: number;
   factor: number;
 }
 
 export interface WordElem {
   text: string;
-  size: number;
+  value: number;
 }
 
 const createWords = (props: Props): WordElem[] => {
-  const {data, width, height, factor} = props;
+  const {data, height, factor} = props;
   const elems: WordElem[] = [];
   let sum = 0;
   if (data) {
@@ -32,25 +29,30 @@ const createWords = (props: Props): WordElem[] => {
     // Then calculate the height of each element
     data.forEach((word) => {
       const size = Math.floor((word.weight / sum) * height) * factor;
-      elems.push({text: word.label, size});
+      elems.push({text: word.label, value: size});
     });
   }
   return elems;
 };
 
+const options = {
+  fontFamily: 'HelveticaNeue-CondensedBlack',
+  fontWeight: 'bold',
+  enableTooltip: false,
+  padding: 0,
+  rotations: 1,
+  rotationAngles: [0]
+};
+
 export const TagCloud = (props: Props) => {
-  const {degrees = 0, factor = 1.2, id, data, width, height, color} = props;
-  const [animate, setAnimate] = useState(false);
+  const {factor = 1.2, id, data, height} = props;
   const [wordElems, setWordElems] = useState(createWords(props));
 
   useEffect(() => {
     setWordElems(createWords(props));
-  });
+  }, [data, height, factor]);
 
   return <div className="tagCloud" key={`tagcloud-${id}`}>
-    <OnVisible visibleClassName="animate" key={`tagcloudon-${id}`}>
-      <D3TagCloud className={cn({animate})} selectId={`tagcloud-root-${id}`} degrees={degrees} words={wordElems} width={width}
-                  height={height} color={color}/>
-    </OnVisible>
+    <ReactWordcloud words={wordElems} options={options} />
   </div>;
 };
