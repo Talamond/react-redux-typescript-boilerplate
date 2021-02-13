@@ -8,7 +8,6 @@ interface Props {
   data: any[];
   width: number;
   height: number;
-  color: string;
   factor: number;
 }
 
