@@ -1,8 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import ReactWordcloud from 'react-wordcloud';
 
-require('./tagCloud.css');
-
 interface Props {
   id: string;
   data: any[];
@@ -56,7 +54,7 @@ const callbacks = {
 };
 
 export const TagCloud = (props: Props) => {
-  const {factor = 1.2, id, data} = props;
+  const {factor = 1.2, data} = props;
   const [wordElems, setWordElems] = useState(createWords(props));
 
   useEffect(() => {

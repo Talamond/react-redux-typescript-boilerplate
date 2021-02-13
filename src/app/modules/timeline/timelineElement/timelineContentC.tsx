@@ -7,6 +7,7 @@ import { TabArea } from 'app/components/tabArea/tabArea';
 import { useDispatch } from 'react-redux';
 import { SelectTab } from '../timelineA';
 import { TagCloud } from 'app/components/tagCloud/tagCloud';
+import { useWindowSize } from 'app/utils/hooks/useWindowSize';
 require('./timelineContent.css');
 
 const isIE = navigator.userAgent.indexOf('MSIE') !== -1 || navigator.appVersion.indexOf('Trident/') > 0;
@@ -16,13 +17,13 @@ const NO_IMAGE_WIDTH = 1100;
 export interface Props {
   timelineElem: TimelineElement;
   selectedTab: number;
-  windowWidth: number;
   timelineType: 'odd' | 'even' | 'education';
 }
 
 export const TimelineContentC = (props: Props) => {
   const dispatch = useDispatch();
-  const {timelineElem: {skills, description, descriptions, details, id, image}, selectedTab, windowWidth} = props;
+  const {timelineElem: {skills, description, descriptions, details, id, image}, selectedTab} = props;
+  const {width} = useWindowSize();
   let fontSize = 22;
   let maxLength = 750;
   let divisor = 50;
@@ -63,7 +64,7 @@ export const TimelineContentC = (props: Props) => {
     });
   }
   return <>
-    {windowWidth >= NO_IMAGE_WIDTH && <img src={image} className={`timelineContent__image id${id} ${isIE ? 'ie' : 'notIe'}`} />}
+    {width && width >= NO_IMAGE_WIDTH && <img src={image} className={`timelineContent__image id${id} ${isIE ? 'ie' : 'notIe'}`} />}
     <TabArea tabContents={tabContents} selectedTab={selectedTab} onTabSelect={(tabIndex) => dispatch(new SelectTab(id, tabIndex) as any)}/>
   </>;
 };
