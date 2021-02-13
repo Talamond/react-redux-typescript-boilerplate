@@ -5,14 +5,15 @@ import { useDispatch, useSelector } from "react-redux";
 import { RootState } from '..';
 import { ProfileArea } from './profileArea/profileArea';
 import { FetchData } from './timelineA';
-import { EducationElementC } from './educationElement/educationElementC';
+import { EducationElement } from './educationElement/educationElement';
 import { TimelineElement } from './timelineElement/timelineElement';
 require('./timeline.css');
 
 interface Props {}
 
 export const Timeline = (props: Props) => {
-  const {timelineElements, selectedTabs, allSkills} = useSelector((state: RootState) => state.timeline);
+  const allSkills = useSelector((state: RootState) => state.timeline.allSkills);
+  const timelineElements = useSelector((state: RootState) => state.timeline.timelineElements);
   const dispatch = useDispatch();
   useEffect(() => dispatch(new FetchData(getResumeData()) as any), []);
 
@@ -29,12 +30,11 @@ export const Timeline = (props: Props) => {
       {timelineElements && timelineElements.map(((tElem, index) => {
         const timelineType: 'odd' | 'even' = index % 2 ? 'odd' : 'even';
         if (tElem.type === 'education') {
-          return <EducationElementC key="education" timelineElem={tElem} />;
+          return <EducationElement key="education" timelineElem={tElem} />;
         } else {
           return <TimelineElement
             key={tElem.id}
             timelineElem={tElem}
-            selectedTab={selectedTabs[tElem.id]}
             timelineType={timelineType}
           />;
         }

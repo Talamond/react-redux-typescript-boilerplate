@@ -55,11 +55,13 @@ const callbacks = {
 
 export const TagCloud = (props: Props) => {
   const {factor = 1.2, data} = props;
-  const [wordElems, setWordElems] = useState(createWords(props));
+  const [wordElems, setWordElems] = useState([]);
 
   useEffect(() => {
     setWordElems(createWords(props));
   }, [data, factor]);
-
-  return <ReactWordcloud words={wordElems} options={options} callbacks={callbacks}/>;
+  if (wordElems.length > 0) {
+    return <ReactWordcloud words={wordElems} options={options} callbacks={callbacks}/>;
+  }
+  return null;
 };

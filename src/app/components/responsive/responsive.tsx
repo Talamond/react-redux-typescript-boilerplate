@@ -8,7 +8,6 @@ interface Props {
   className: string;
 }
 
-
 function renderResponsive(mobile: React.ReactNode, pad: React.ReactNode, desktop: React.ReactNode) {
   const size = checkDeviceSize();
   if (size === 'mobile') {

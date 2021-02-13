@@ -8,6 +8,7 @@ import { useDispatch } from 'react-redux';
 import { SelectTab } from '../timelineA';
 import { TagCloud } from 'app/components/tagCloud/tagCloud';
 import { useWindowSize } from 'app/utils/hooks/useWindowSize';
+
 require('./timelineElementContent.css');
 
 const isIE = navigator.userAgent.indexOf('MSIE') !== -1 || navigator.appVersion.indexOf('Trident/') > 0;
@@ -51,7 +52,7 @@ export const TimelineElementContent = (props: Props) => {
     },
     {
       name: 'Skills',
-      content: <div><TagCloud id={`${id}`} data={skills} height={425} width={425} factor={factor}/></div>
+      content: <TagCloud id={`${id}`} data={skills} factor={factor}/>
     },
     {
       name: 'Info',
