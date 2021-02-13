@@ -1,9 +1,10 @@
+import { Skill } from 'app/modules/timeline/timelineF';
 import React, {useState, useEffect} from 'react';
 import ReactWordcloud from 'react-wordcloud';
 
 interface Props {
   id: string;
-  data: any[];
+  data: Skill[];
   factor: number;
 }
 
@@ -55,13 +56,13 @@ const callbacks = {
 
 export const TagCloud = (props: Props) => {
   const {factor = 1.2, data} = props;
-  const [wordElems, setWordElems] = useState([]);
+  const [wordElems, setWordElems] = useState<WordElem[]>([]);
 
   useEffect(() => {
     setWordElems(createWords(props));
   }, [data, factor]);
   if (wordElems.length > 0) {
-    return <ReactWordcloud words={wordElems} options={options} callbacks={callbacks}/>;
+    return <ReactWordcloud words={wordElems} options={options as any} callbacks={callbacks}/>;
   }
   return null;
 };

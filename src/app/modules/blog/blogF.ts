@@ -1,6 +1,8 @@
 import { ROOT_PATH } from "../app/appF";
 
 export const BLOG_PATH = `${ROOT_PATH}/blog`;
+export const ABOUT_ME = `about-me`;
+export const ABOUT_PATH = `${BLOG_PATH}/${ABOUT_ME}`;
 
   // BLOG: {
 	//   TITLE: 'Blog',

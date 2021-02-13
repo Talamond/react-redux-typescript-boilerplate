@@ -11,7 +11,7 @@ export interface Props {
 }
 
 export const Header = (props: Props): JSX.Element => {
-
+  // todo: what's the new react-router Link?
   return (
     <header className="header">
       {props.headers.map((header) => (<div className="header__elem" key={header.label} onClick={(e: React.MouseEvent<HTMLElement>) => navigate(e, header.path)}>{header.label}</div>))}

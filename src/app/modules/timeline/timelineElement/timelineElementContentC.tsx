@@ -52,7 +52,7 @@ export const TimelineElementContent = (props: Props) => {
     },
     {
       name: 'Skills',
-      content: <TagCloud id={`${id}`} data={skills} factor={factor}/>
+      content: <TagCloud id={`${id}`} data={skills ?? []} factor={factor}/>
     },
     {
       name: 'Info',

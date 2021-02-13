@@ -1,6 +1,7 @@
+import { Footer } from 'app/components/footer/footer';
 import { Header } from 'app/components/header/header';
 import React from 'react';
-import {  Redirect, Route, RouteComponentProps } from 'react-router';
+import { Redirect, Route, RouteComponentProps } from 'react-router';
 import { Timeline } from '../timeline/timeline';
 import { TIMELINE_PATH } from '../timeline/timelineF';
 import { HEADER_ELEMS } from './appF';
@@ -59,6 +60,7 @@ export const AppC = ({ history, location }: App.Props) => {
         </Route>
         <Route path={TIMELINE_PATH} component={Timeline}/>
       </div>
+      <Footer/>
     </div>
   );
 };

@@ -11,11 +11,11 @@ export interface Props {
 }
 
 export const EducationElement = (props: Props) => {
-  let schoolImage = '../../../../assets/images/UW_Building-mobile.jpg';
-  let schoolImageSmall = '../../../../assets/images/UWsmallMobile.jpg';
+  let schoolImage = '/assets/images/UW_Building-mobile.jpg';
+  let schoolImageSmall = '/assets/images/UWsmallMobile.jpg';
   if (checkDeviceSize() === 'mobile') {
-    schoolImage = '../../../../assets/images/UW_Building-full.jpg';
-    schoolImageSmall = '../../../../assets/images/UWSmall.jpg';
+    schoolImage = '/assets/images/UW_Building-full.jpg';
+    schoolImageSmall = '/assets/images/UWSmall.jpg';
   }
 
   const small = <EducationElementContent timelineElem={props.timelineElem} />;
