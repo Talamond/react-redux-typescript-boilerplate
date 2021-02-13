@@ -6,3 +6,11 @@
 .timeline__content {
 
 }
+.timeline__tagCloudWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 75vh;
+  background-color: var(--backgroundOdd);
+}

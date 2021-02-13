@@ -20,13 +20,13 @@ export const TimelineC = (props: Props) => {
   return (<div className="timeline">
     <ProfileArea />
     <div className="timeline__content">
-      <TagCloud
-        id="allSkills"
-        data={allSkills}
-        height={summaryHeight}
-        width={summaryWidth - 20}
-        factor={2}
-      />
+      <div className="timeline__tagCloudWrapper">
+        <TagCloud
+          id="allSkills"
+          data={allSkills}
+          factor={2}
+        />
+      </div>
       {timelineElements && timelineElements.map(((tElem, index) => {
         const timelineType: 'odd' | 'even' = index % 2 ? 'odd' : 'even';
         if (tElem.type === 'education') {

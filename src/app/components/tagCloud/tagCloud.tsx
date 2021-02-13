@@ -6,8 +6,6 @@ require('./tagCloud.css');
 interface Props {
   id: string;
   data: any[];
-  width: number;
-  height: number;
   factor: number;
 }
 
@@ -17,7 +15,7 @@ export interface WordElem {
 }
 
 const createWords = (props: Props): WordElem[] => {
-  const {data, height, factor} = props;
+  const {data, factor} = props;
   const elems: WordElem[] = [];
   let sum = 0;
   if (data) {
@@ -27,14 +25,14 @@ const createWords = (props: Props): WordElem[] => {
     });
     // Then calculate the height of each element
     data.forEach((word) => {
-      const size = Math.floor((word.weight / sum) * height) * factor;
+      const size = Math.floor(word.weight / sum) * factor;
       elems.push({text: word.label, value: size});
     });
   }
   return elems;
 };
 
-const colors = ['#1b82d1', '#efb911', '#d83456', '#e97125', '#04a699', '#b521bd', '#21c6f3', '#906d4d', '#f990e2', '#8346b4', '#6d349b', '#582383'];
+const colors = ['#f5222d', '#fa541c', '#fa8c16', '#faad14', '#fadb14', '#a0d911', '#52c41a', '#13c2c2', '#1890ff', '#2f54eb', '#722ed1', '#eb2f96'];
 
 const options = {
   fontFamily: 'HelveticaNeue-CondensedBlack',
@@ -58,14 +56,12 @@ const callbacks = {
 };
 
 export const TagCloud = (props: Props) => {
-  const {factor = 1.2, id, data, height} = props;
+  const {factor = 1.2, id, data} = props;
   const [wordElems, setWordElems] = useState(createWords(props));
 
   useEffect(() => {
     setWordElems(createWords(props));
-  }, [data, height, factor]);
+  }, [data, factor]);
 
-  return <div className="tagCloud" key={`tagcloud-${id}`}>
-    <ReactWordcloud words={wordElems} options={options} callbacks={callbacks}/>
-  </div>;
+  return <ReactWordcloud words={wordElems} options={options} callbacks={callbacks}/>;
 };
