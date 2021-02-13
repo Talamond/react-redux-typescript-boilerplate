@@ -23,15 +23,3 @@ export class ChangeDimensions extends Action {
 		super();
 	}
 }
-
-export interface TimelineActions {
-	fetchData(): any;
-	selectTab(id: number, tabIndex: number): any;
-	changeDimensions(width: number, height: number): any;
-}
-
-export const timelineActionCreators: TimelineActions = {
-	fetchData: (): Action => new FetchData(getResumeData()),
-	selectTab: (id: number, tabIndex: number): Action => new SelectTab(id, tabIndex),
-	changeDimensions: (width: number, height: number): Action => new ChangeDimensions(width, height)
-};

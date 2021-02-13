@@ -1,5 +1,5 @@
 import React from 'react';
-import { TimelineElement } from '../timelineF.js';
+import { TimelineElementI } from '../timelineF.js';
 import OnVisible from 'react-on-visible';
 import { checkDeviceSize } from 'app/utils/responsiveHelper';
 import _ from 'lodash';
@@ -8,19 +8,19 @@ import { useDispatch } from 'react-redux';
 import { SelectTab } from '../timelineA';
 import { TagCloud } from 'app/components/tagCloud/tagCloud';
 import { useWindowSize } from 'app/utils/hooks/useWindowSize';
-require('./timelineContent.css');
+require('./timelineElementContent.css');
 
 const isIE = navigator.userAgent.indexOf('MSIE') !== -1 || navigator.appVersion.indexOf('Trident/') > 0;
 
 const NO_IMAGE_WIDTH = 1100;
 
 export interface Props {
-  timelineElem: TimelineElement;
+  timelineElem: TimelineElementI;
   selectedTab: number;
   timelineType: 'odd' | 'even' | 'education';
 }
 
-export const TimelineContentC = (props: Props) => {
+export const TimelineElementContent = (props: Props) => {
   const dispatch = useDispatch();
   const {timelineElem: {skills, description, descriptions, details, id, image}, selectedTab} = props;
   const {width} = useWindowSize();
@@ -39,11 +39,11 @@ export const TimelineContentC = (props: Props) => {
   const tabContents = [
     {
       name: 'Details',
-      content: <div className="timelineContent__details">
+      content: <div className="timelineElementContent__details">
         {details && details.map((detail, index) => {
           return (
             <OnVisible key={index} visibleClassName="animate-detail">
-              <div key={index} className="timelineContent__detail">{detail}</div>
+              <div key={index} className="timelineElementContent__detail">{detail}</div>
             </OnVisible>
           );
         })}
@@ -55,16 +55,16 @@ export const TimelineContentC = (props: Props) => {
     },
     {
       name: 'Info',
-      content: <div className="timelineContent__description" style={{fontSize: fontSize + 'px'}}>{description}</div>
+      content: <div className="timelineElementContent__description" style={{fontSize: fontSize + 'px'}}>{description}</div>
     }
   ];
   if (descriptions) {
     _.forIn(descriptions, (desc, project) => {
-      tabContents.push({name: project, content: <div className="timelineContent__description" style={{fontSize: fontSize + 'px'}}>{desc}</div>});
+      tabContents.push({name: project, content: <div className="timelineElementContent__description" style={{fontSize: fontSize + 'px'}}>{desc}</div>});
     });
   }
   return <>
-    {width && width >= NO_IMAGE_WIDTH && <img src={image} className={`timelineContent__image id${id} ${isIE ? 'ie' : 'notIe'}`} />}
+    {width! >= NO_IMAGE_WIDTH && <img src={image} className={`timelineElementContent__image id${id} ${isIE ? 'ie' : 'notIe'}`} />}
     <TabArea tabContents={tabContents} selectedTab={selectedTab} onTabSelect={(tabIndex) => dispatch(new SelectTab(id, tabIndex) as any)}/>
   </>;
 };

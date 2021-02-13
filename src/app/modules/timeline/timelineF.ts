@@ -8,7 +8,7 @@ export interface Skill {
   weight: number;
 }
 
-export interface TimelineElement {
+export interface TimelineElementI {
   id: number;
   startDate: moment.Moment;
   endDate: moment.Moment;

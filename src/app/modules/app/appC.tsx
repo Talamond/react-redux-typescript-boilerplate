@@ -1,11 +1,11 @@
 import { Header } from 'app/components/header/header';
 import React from 'react';
 import {  Redirect, Route, RouteComponentProps } from 'react-router';
-import { TimelineC } from '../timeline/timelineC';
+import { Timeline } from '../timeline/timeline';
 import { TIMELINE_PATH } from '../timeline/timelineF';
 import { HEADER_ELEMS } from './appF';
-require('./app.css');
 
+require('./app.css');
 
 export namespace App {
   export interface Props extends RouteComponentProps<void> {}
@@ -57,7 +57,7 @@ export const AppC = ({ history, location }: App.Props) => {
         <Route exact path="/">
             <Redirect to={TIMELINE_PATH} />
         </Route>
-        <Route path={TIMELINE_PATH} component={TimelineC}/>
+        <Route path={TIMELINE_PATH} component={Timeline}/>
       </div>
     </div>
   );

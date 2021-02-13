@@ -1,28 +1,24 @@
 import { isActionType, Reducer } from "jsweetman-redux-typed";
-import { ChangeDimensions, FetchData, SelectTab } from "./timelineA";
-import { Skill, TimelineElement } from "./timelineF";
+import { FetchData, SelectTab } from "./timelineA";
+import { Skill, TimelineElementI } from "./timelineF";
 import _ from 'lodash';
 
 export interface TimelineState {
-  timelineElements?: TimelineElement[],
+  timelineElements?: TimelineElementI[],
   selectedTabs: {
     [id: string]: number;
   },
   skillMap: {
     [skillLabel: string]: number;
   },
-  allSkills: Skill[],
-  summaryWidth: number;
-  summaryHeight: number;
+  allSkills: Skill[]
 }
 
 const getInitialState = (): TimelineState => {
   return {
     selectedTabs: {},
     skillMap: {},
-    allSkills: [],
-    summaryWidth: window.innerWidth,
-    summaryHeight: window.innerHeight
+    allSkills: []
   };
 };
 
@@ -38,10 +34,10 @@ export const timelineReducer: Reducer<TimelineState> = (state, action) => {
     const newState = {...state};
     newState.timelineElements = [...action.data];
     newState.skillMap = {...state.skillMap};
-    newState.timelineElements = _.sortBy(newState.timelineElements, (elem: TimelineElement) => {
+    newState.timelineElements = _.sortBy(newState.timelineElements, (elem: TimelineElementI) => {
       return -1 * elem.endDate.unix();
     });
-    newState.timelineElements!.forEach((elem: TimelineElement) => {
+    newState.timelineElements!.forEach((elem: TimelineElementI) => {
       if (elem.skills) {
         elem.skills.forEach((skill: Skill) => {
           if (newState.skillMap[skill.label]) {
@@ -57,13 +53,6 @@ export const timelineReducer: Reducer<TimelineState> = (state, action) => {
       allSkills.push({label: key, weight: value});
     });
     newState.allSkills = allSkills;
-    return newState;
-  }
-
-  if (isActionType(action, ChangeDimensions)) {
-    const newState = {...state};
-    newState.summaryWidth = action.width;
-    newState.summaryHeight = action.height;
     return newState;
   }
 

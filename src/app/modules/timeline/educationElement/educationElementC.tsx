@@ -1,13 +1,13 @@
 import React from 'react';
 import { momentToString } from 'app/utils/dateHelper';
 import { checkDeviceSize } from 'app/utils/responsiveHelper';
-import { TimelineElement } from '../timelineF';
+import { TimelineElementI } from '../timelineF';
 import ProgressiveImage from 'react-progressive-image';
 import { Responsive } from 'app/components/responsive/responsive';
 require('./educationElement.css');
 
 export interface Props {
-  timelineElem: TimelineElement;
+  timelineElem: TimelineElementI;
 }
 
 export const EducationElementC = (props: Props) => {
@@ -31,8 +31,6 @@ export const EducationElementC = (props: Props) => {
   const largeEdu = (
     <div className="educationElement__title">
       <h1 className="educationElement__jobTitle">{title}</h1>
-      <h2 className="educationElement__subtitle">{subTitle}</h2>
-      <h2 className="educationElement__subtitle">{employer}</h2>
       <h3 className="educationElement__subtitle">{momentToString(startDate)} - {momentToString(endDate)}</h3>
       <div className="educationElement__imageContainer">
         <img src={image} className="educationElement__image" />
