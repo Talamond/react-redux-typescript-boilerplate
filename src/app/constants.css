@@ -21,7 +21,9 @@
   --backgroundEven: white;
   --backgroundEducation: lighten($darkGrey, 5%);
   /* TODO: redo the main text color */
-  --mainText: var(--carbon);
+  --mainText: #5d5d5d;
+  --mainLighterText: #5d5d5d;
+  --mainLightestText: #5d5d5d;
   --subText: var(--carbon);
   --phoneMinWidth: 320px;
   --phoneMaxWidth: 479px;

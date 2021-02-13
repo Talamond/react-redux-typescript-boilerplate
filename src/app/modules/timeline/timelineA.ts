@@ -1,4 +1,3 @@
-import { getResumeData } from 'app/utils/resumeData';
 import { typeName, Action } from 'jsweetman-redux-typed';
 
 const SUFFIX = '__TIMELINE';

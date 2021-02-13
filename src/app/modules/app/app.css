@@ -24,16 +24,14 @@ h1 {
 h2 {
   margin: 0px;
   font-size: 24px;
-  /* TODO: redo the text color */
-  color: var(--darkGrey);
+  color: var(--mainLighterText);
   font-weight: 200;
 }
 
 h3 {
   margin: 0px;
   font-size: 20px;
-  /* TODO: redo the text color */
-  olor: var(--darkGrey);
+  color: var(--mainLightestText);
   font-weight: 200;
 }
 
@@ -41,8 +39,7 @@ h3 {
 h4 {
   margin: 0px;
   font-size: 18px;
-  /* TODO: redo the text color */
-  color: var(--darkGrey);
+  color: var(--mainLightestText);
   font-weight: 200;
 }
 
