@@ -1,6 +1,6 @@
 import { TagCloud } from 'app/components/tagCloud/tagCloud';
 import { getResumeData } from 'app/utils/resumeData';
-import React, { useEffect } from 'react';
+import React, { FunctionComponent, useEffect } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from '..';
 import { ProfileArea } from './profileArea/profileArea';
@@ -11,7 +11,7 @@ require('./timeline.css');
 
 interface Props {}
 
-export const Timeline = (props: Props) => {
+export const Timeline: FunctionComponent<Props> = (props: Props) => {
   const allSkills = useSelector((state: RootState) => state.timeline.allSkills);
   const timelineElements = useSelector((state: RootState) => state.timeline.timelineElements);
   const dispatch = useDispatch();

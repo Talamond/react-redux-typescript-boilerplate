@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FunctionComponent } from 'react';
 import { checkDeviceSize } from 'app/utils/responsiveHelper';
 import { TimelineElementI } from '../timelineF';
 import ProgressiveImage from 'react-progressive-image';
@@ -10,7 +10,7 @@ export interface Props {
   timelineElem: TimelineElementI;
 }
 
-export const EducationElement = (props: Props) => {
+export const EducationElement: FunctionComponent<Props> = (props: Props) => {
   let schoolImage = '/assets/images/UW_Building-mobile.jpg';
   let schoolImageSmall = '/assets/images/UWsmallMobile.jpg';
   if (checkDeviceSize() === 'mobile') {

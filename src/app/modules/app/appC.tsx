@@ -1,10 +1,11 @@
 import { Footer } from 'app/components/footer/footer';
 import { Header } from 'app/components/header/header';
 import React from 'react';
-import { Redirect, Route, RouteComponentProps } from 'react-router';
+import { Redirect, Route, RouteComponentProps } from 'react-router-dom';
+import { Blog } from '../blog/blog';
+import { BLOG_PATH } from '../blog/blogF';
 import { Timeline } from '../timeline/timeline';
 import { TIMELINE_PATH } from '../timeline/timelineF';
-import { HEADER_ELEMS } from './appF';
 
 require('./app.css');
 
@@ -53,12 +54,13 @@ export const AppC = ({ history, location }: App.Props) => {
       <Footer/>
       */
   return (<div className="app-root">
-      <Header headers={HEADER_ELEMS}/>
+      <Header />
       <div className="app-main">
         <Route exact path="/">
             <Redirect to={TIMELINE_PATH} />
         </Route>
-        <Route path={TIMELINE_PATH} component={Timeline}/>
+        <Route path={TIMELINE_PATH} exact component={Timeline}/>
+        <Route path={BLOG_PATH} component={Blog}/>
       </div>
       <Footer/>
     </div>

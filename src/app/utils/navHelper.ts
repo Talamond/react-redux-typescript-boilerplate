@@ -1,9 +1,7 @@
-import { useHistory } from 'react-router';
-
-export function navigate(event: React.MouseEvent<HTMLElement>, url: string) {
+export function navigate(event: React.MouseEvent<HTMLElement>, url: string, history) {
   if (event.ctrlKey || event.metaKey) {
     window.open(url, '_blank');
   } else {
-    useHistory().push(url)
+    history.push(url)
   }
 }
