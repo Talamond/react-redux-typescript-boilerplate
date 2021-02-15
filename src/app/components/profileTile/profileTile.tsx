@@ -10,7 +10,7 @@ export const ProfileTile: FunctionComponent<Props> = ({date}) => {
 
   return <div className="profileTile">
     <div className="profileTile__imgRow">
-      <img className="profileTile__jon" src="/assets/images/me.jpeg" />
+      <img className="profileTile__jon" src="/jsweetman/assets/images/me.jpeg" />
     </div>
     <div className="profileTile__tilteRow">
       <div className="profileTile__name">Jonathan Sweetman</div>

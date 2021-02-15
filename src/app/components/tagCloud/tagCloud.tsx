@@ -5,7 +5,7 @@ import ReactWordcloud from 'react-wordcloud';
 interface Props {
   id: string;
   data: Skill[];
-  factor: number;
+  isBig?: boolean;
 }
 
 export interface WordElem {
@@ -14,7 +14,7 @@ export interface WordElem {
 }
 
 const createWords = (props: Props): WordElem[] => {
-  const {data, factor} = props;
+  const {data} = props;
   const elems: WordElem[] = [];
   let sum = 0;
   if (data) {
@@ -24,7 +24,7 @@ const createWords = (props: Props): WordElem[] => {
     });
     // Then calculate the height of each element
     data.forEach((word) => {
-      const size = Math.floor(word.weight / sum) * factor;
+      const size = word.weight / sum;
       elems.push({text: word.label, value: size});
     });
   }
@@ -43,6 +43,16 @@ const options = {
   rotationAngles: [0]
 };
 
+const bigOptions = {
+  fontFamily: 'HelveticaNeue-CondensedBlack',
+  fontWeight: 'bold',
+  fontSizes: [20,140],
+  enableTooltip: false,
+  padding: 0,
+  rotations: 1,
+  rotationAngles: [0]
+};
+
 let colorIndex = -1;
 const callbacks = {
   getWordColor: (word: any) => {
@@ -55,14 +65,14 @@ const callbacks = {
 };
 
 export const TagCloud = (props: Props) => {
-  const {factor = 1.2, data} = props;
+  const {isBig, data} = props;
   const [wordElems, setWordElems] = useState<WordElem[]>([]);
 
   useEffect(() => {
     setWordElems(createWords(props));
-  }, [data, factor]);
+  }, [data]);
   if (wordElems.length > 0) {
-    return <ReactWordcloud words={wordElems} options={options as any} callbacks={callbacks}/>;
+    return <ReactWordcloud words={wordElems} options={isBig ? bigOptions : options as any} callbacks={callbacks}/>;
   }
   return null;
 };

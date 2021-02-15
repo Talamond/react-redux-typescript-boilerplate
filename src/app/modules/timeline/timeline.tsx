@@ -24,7 +24,7 @@ export const Timeline: FunctionComponent<Props> = (props: Props) => {
         <TagCloud
           id="allSkills"
           data={allSkills}
-          factor={2}
+          isBig
         />
       </div>
       {timelineElements && timelineElements.map(((tElem, index) => {

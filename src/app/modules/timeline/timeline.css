@@ -2,10 +2,9 @@
 
 .timeline {
   position: relative;
+  width: 100%;
 }
-.timeline__content {
 
-}
 .timeline__tagCloudWrapper {
   display: flex;
   align-items: center;

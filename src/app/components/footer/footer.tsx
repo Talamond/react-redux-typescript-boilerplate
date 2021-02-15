@@ -37,7 +37,7 @@ export const Footer = (): JSX.Element => {
       </a>
     </div>
     <div className="footer__about">
-      <a className="footer__resumeLink" href="/assets/JonathanSweetmanResume.pdf">View Resume</a>
+      <a className="footer__resumeLink" href="/jsweetman/assets/JonathanSweetmanResume.pdf">View Resume</a>
     </div>
   </footer>;
 };

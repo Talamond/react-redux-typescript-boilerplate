@@ -28,7 +28,6 @@ export const TimelineElementContent = (props: Props) => {
   let fontSize = 22;
   let maxLength = 750;
   let divisor = 50;
-  const factor = skills ? (skills.length < 7 ? 1 : 1.5) : 1.5;
   if (checkDeviceSize() === 'mobile') {
     fontSize = 14;
     maxLength = 500;
@@ -52,7 +51,7 @@ export const TimelineElementContent = (props: Props) => {
     },
     {
       name: 'Skills',
-      content: <TagCloud id={`${id}`} data={skills ?? []} factor={factor}/>
+      content: <TagCloud id={`${id}`} data={skills ?? []}/>
     },
     {
       name: 'Info',
