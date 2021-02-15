@@ -1,6 +1,5 @@
 import { createDate } from "app/utils/dateHelper";
 import React, { ReactElement } from "react";
-import { FunctionComponent } from "react";
 import { ROOT_PATH } from "../app/appF";
 import { AboutMeContent } from "./blogContent/aboutMeContent";
 import { DosAndDontsContent } from "./blogContent/dosAndDontContent";

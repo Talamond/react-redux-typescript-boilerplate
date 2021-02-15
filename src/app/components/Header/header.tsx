@@ -6,7 +6,7 @@ import { useHistory } from 'react-router-dom';
 
 
 require('./header.css');
-const Github = require('../../../assets/images/github.svg');
+const Github = require('../../../jsweetman/assets/images/github.svg');
 
 interface Props {}
 

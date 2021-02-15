@@ -1,7 +1,7 @@
 import { Footer } from 'app/components/footer/footer';
 import { Header } from 'app/components/header/header';
 import React from 'react';
-import { Redirect, Route, RouteComponentProps } from 'react-router-dom';
+import { Redirect, Route } from 'react-router-dom';
 import { Blog } from '../blog/blog';
 import { BLOG_PATH } from '../blog/blogF';
 import { BlogSelect } from '../blogSelect/blogSelect';

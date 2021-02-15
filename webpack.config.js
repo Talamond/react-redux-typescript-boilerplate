@@ -22,7 +22,7 @@ module.exports = {
     path: outPath,
     filename: isProduction ? '[contenthash].js' : '[hash].js',
     chunkFilename: isProduction ? '[name].[contenthash].js' : '[name].[hash].js',
-    publicPath: '/'
+    publicPath: '/jsweetman'
   },
   target: 'web',
   resolve: {
@@ -146,7 +146,7 @@ module.exports = {
       disable: !isProduction
     }),
     new HtmlWebpackPlugin({
-      template: 'assets/index.html',
+      template: 'index.html',
       minify: {
         minifyJS: true,
         minifyCSS: true,

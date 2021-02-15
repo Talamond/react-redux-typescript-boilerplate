@@ -14,7 +14,7 @@ export function getResumeData(): TimelineElementI[] {
       employer: 'University of Waterloo',
       type: 'education',
       color: '#F1C40F',
-      image: '../../assets/images/Uwaterloo_seal2.png'
+      image: '../../jsweetman/assets/images/Uwaterloo_seal2.png'
     },
     /*    {
      id: 2,
@@ -34,7 +34,7 @@ export function getResumeData(): TimelineElementI[] {
      'technically.',
      type: 'coop',
      color: '#BF5FFF',
-     image: '../../assets/images/parlay2.png',
+     image: '../../jsweetman/assets/images/parlay2.png',
      skills: [{label: 'QA', weight: 7}
      ],
      },
@@ -63,7 +63,7 @@ export function getResumeData(): TimelineElementI[] {
         {label: 'Web', weight: 8},
         {label: 'SVN', weight: 5}
       ],
-      image: '../../assets/images/ontario.png'
+      image: '../../jsweetman/assets/images/ontario.png'
     },
     {
       id: 4,
@@ -89,7 +89,7 @@ export function getResumeData(): TimelineElementI[] {
         {label: 'SQLServer', weight: 3},
         {label: 'SVN', weight: 5}
       ],
-      image: '../../assets/images/sqlpower.png'
+      image: '../../jsweetman/assets/images/sqlpower.png'
     },
     {
       id: 5,
@@ -120,7 +120,7 @@ export function getResumeData(): TimelineElementI[] {
         {label: 'SVN', weight: 5},
         {label: 'CSS', weight: 8}
       ],
-      image: '../../assets/images/n8.svg'
+      image: '../../jsweetman/assets/images/n8.svg'
     },
     {
       id: 8,
@@ -153,7 +153,7 @@ export function getResumeData(): TimelineElementI[] {
         {label: 'CSS', weight: 8}
       ],
 
-      image: '../../assets/images/n8.svg'
+      image: '../../jsweetman/assets/images/n8.svg'
     },
     {
       id: 9,
@@ -221,7 +221,7 @@ export function getResumeData(): TimelineElementI[] {
         {label: 'HTML5', weight: 30},
         {label: 'Apache Kafka', weight: 15}
       ],
-      image: '../../assets/images/IBM_logo.svg'
+      image: '../../jsweetman/assets/images/IBM_logo.svg'
     },
     {
       id: 10,
@@ -257,7 +257,7 @@ export function getResumeData(): TimelineElementI[] {
         {label: 'NPM', weight: 50},
         {label: 'Git', weight: 20}
       ],
-      image: '../../assets/images/IBM_logo.svg'
+      image: '../../jsweetman/assets/images/IBM_logo.svg'
     },
   ];
 }

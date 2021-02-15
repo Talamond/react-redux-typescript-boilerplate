@@ -7,7 +7,7 @@ import { BlogItem } from "../blog/blogF";
 
 require('./blogEntry.css');
 
-const Arrow = require('../../../assets/images/arrow.svg');
+const Arrow = require('../../../jsweetman/assets/images/arrow.svg');
 
 interface Props {
   blogItem: BlogItem;

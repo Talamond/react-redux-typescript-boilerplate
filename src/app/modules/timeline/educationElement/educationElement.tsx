@@ -11,11 +11,11 @@ export interface Props {
 }
 
 export const EducationElement: FunctionComponent<Props> = (props: Props) => {
-  let schoolImage = '/assets/images/UW_Building-mobile.jpg';
-  let schoolImageSmall = '/assets/images/UWsmallMobile.jpg';
+  let schoolImage = '/jsweetman/assets/images/UW_Building-mobile.jpg';
+  let schoolImageSmall = '/jsweetman/assets/images/UWsmallMobile.jpg';
   if (checkDeviceSize() === 'mobile') {
-    schoolImage = '/assets/images/UW_Building-full.jpg';
-    schoolImageSmall = '/assets/images/UWSmall.jpg';
+    schoolImage = '/jsweetman/assets/images/UW_Building-full.jpg';
+    schoolImageSmall = '/jsweetman/assets/images/UWSmall.jpg';
   }
 
   const small = <EducationElementContent timelineElem={props.timelineElem} />;

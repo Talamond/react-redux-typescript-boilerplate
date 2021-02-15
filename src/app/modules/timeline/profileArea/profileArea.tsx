@@ -5,12 +5,12 @@ require('./profileArea.css');
 
 export const ProfileArea = () => {
   return <div className="profileArea">
-    <ProgressiveImage src="/assets/images/mainpic.jpg" placeholder="/assets/images/mainpicSmall.jpg">
+    <ProgressiveImage src="/jsweetman/assets/images/mainpic.jpg" placeholder="/jsweetman/assets/images/mainpicSmall.jpg">
       {(src: string) => <img src={src} alt='an image of Jonathan Sweetman'/>}
     </ProgressiveImage>
     <div className="profileArea__profile">
       <div className="profileArea__jonwrapper">
-        <img src="/assets/images/me.jpeg" className="profileArea__jon" />
+        <img src="/jsweetman/assets/images/me.jpeg" className="profileArea__jon" />
       </div>
       <div className="profileArea__title">
         <div>Jonathan Sweetman</div>

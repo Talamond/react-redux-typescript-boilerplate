@@ -1,9 +1,9 @@
 import React from 'react';
-const Github = require('../../../assets/images/github.svg');
-const Email = require('../../../assets/images/email.svg');
-const Facebook = require('../../../assets/images/facebook.svg');
-const LinkedIn = require('../../../assets/images/linkedin.svg');
-const Meetup = require('../../../assets/images/meetup.svg');
+const Github = require('../../../jsweetman/assets/images/github.svg');
+const Email = require('../../../jsweetman/assets/images/email.svg');
+const Facebook = require('../../../jsweetman/assets/images/facebook.svg');
+const LinkedIn = require('../../../jsweetman/assets/images/linkedin.svg');
+const Meetup = require('../../../jsweetman/assets/images/meetup.svg');
 
 require('./footer.css');
 

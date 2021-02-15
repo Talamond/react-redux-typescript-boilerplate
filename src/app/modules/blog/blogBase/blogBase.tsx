@@ -1,14 +1,14 @@
 import { ProfileTile } from "app/components/profileTile/profileTile";
 import { navigate } from "app/utils/navHelper";
-import React, { ReactNode } from "react";
+import React from "react";
 import { FunctionComponent } from "react";
 import { useHistory } from "react-router";
 import { BlogItem } from "../blogF";
 
 require('./blogBase.css');
 
-const ArrowLeft = require('../../../../assets/images/arrow-left.svg');
-const ArrowRight = require('../../../../assets/images/arrow-right.svg');
+const ArrowLeft = require('../../../../jsweetman/assets/images/arrow-left.svg');
+const ArrowRight = require('../../../../jsweetman/assets/images/arrow-right.svg');
 
 interface Props {
   blog: BlogItem;
