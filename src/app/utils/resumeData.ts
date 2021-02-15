@@ -193,8 +193,6 @@ export function getResumeData(): TimelineElementI[] {
         'provided a Javascript library that tenant applications could include to make communication easy. There was also support for ' +
         'drag and drop between the iframes and the Core. For the Core\'s UI, we used primarily backbonejs with some jQuery to create our UI.'
       },
-
-      summary: 'IBM Canada',
       details: [
         'Interviewed development team candidates',
         'Implemented enhancements and fixed bugs on a variety of products',
@@ -226,7 +224,7 @@ export function getResumeData(): TimelineElementI[] {
     {
       id: 10,
       startDate: createDate('2015-09-01'),
-      endDate: createDate('2017-02-01'),   // todo get current date and use that
+      endDate: createDate('2017-03-31'),
       title: 'Lead UI Architect',
       employer: 'IBM Canada',
       description: 'In September 2015, I started a new venture at IBM. I was given the responsibility of leading the development of ICM’s UI, a migration from windows to web app. After a successful rewrite of ICM’s UI, I was promoted to Lead UI Architect and moved onto rewriting the UI of RCA. As the Architect, I was also responsible for educating all teams on UI (React/Redux) coding best practices. After another successful rewrite of RCA’s UI, I now work on a common component library for all our products to use with the goal of making the applications consistent with each other.',
@@ -235,7 +233,6 @@ export function getResumeData(): TimelineElementI[] {
         RCA: 'RCA was another product that had a lack-luster user interface and again I was tasked to rewrite the front end. Again I choose React with Redux to achieve this. It was a similar experience, but on a much smaller scale on a much smaller time frame. In the 3 months, with a team of 4, we managed to rewrite 75% the application while leaving the other 25% with the old UI contained seemless in iframes. Since I had done my job getting the ball moving, I handed off the rest of the UI to the RCA development team and they completed the rewrite a month later.',
         Library: 'While building RCA, I was also tasked of building a shared React component library. One of the problems we continually have with the designers is they keep redesigning things they’ve already done. Through out our 3 large teams, we ended up having several different looks and feels for components that should be the same. It is now my job to create a library all the teams can use and also get the design team aligned with this component library. Some of the features of the component library include: high unit test coverage, accessibility and polished looks.'
       },
-      summary: 'IBM Canada',
       details: [
         'Responsible for designing and implementing UI Architecture on several projects',
         'Lead several teams of up to 20 developers on product implementation',
@@ -256,6 +253,103 @@ export function getResumeData(): TimelineElementI[] {
         {label: 'Karma', weight: 50},
         {label: 'NPM', weight: 50},
         {label: 'Git', weight: 20}
+      ],
+      image: '../../jsweetman/assets/images/IBM_logo.svg'
+    },
+    {
+      id: 11,
+      startDate: createDate('2017-04-01'),
+      endDate: createDate('2019-04-01'),
+      title: 'Freelance UI Developer',
+      employer: 'Toptal Contract',
+      description: 'After IBM, I joined Toptal as a freelance UI developer. I was quickly matched with a client to tasked me to migrate his existing Flash web application to a responsive modern web application. This position was off and on between full time and part time depending on the work needed. The client and I worked closely together as the only two developers to ensure the UI and backend worked seemlessly together. The frontend was designed to fetch only the minimum amount of data from the backend to reduce data usage and maximize speeds from a mobile device with potientially poor connectivity. It was also built to rollback the Redux state based off returned status codes that indicated conflicts with other users, like an item no longer being available in the cart. Deployment was a success, 1000s users were satisfied with the new responsive app.',
+
+      details: [
+        'Rewrote client’s web application from Flash to a modern web stack as the sole UI developer',
+        'Consumed Sketch files and app architecture specifications which were used to create a responsive web application',
+        'Advised the client on coding best practices and UI architecture',
+        'Successfully deployed the web app to 1000s of satisfied users'
+      ],
+      type: 'full',
+      color: '#3498DB',
+      skills: [
+        {label: 'React', weight: 100},
+        {label: 'Redux', weight: 100},
+        {label: 'Typescript', weight: 100},
+        {label: 'CSS', weight: 50},
+        {label: 'SASS', weight: 70},
+        {label: 'Webpack', weight: 50},
+        {label: 'Responsive', weight: 60},
+        {label: 'rxjs', weight: 60},
+        {label: 'Yarn', weight: 30},
+        {label: 'Git', weight: 20},
+        {label: 'Sketch', weight: 20}
+      ],
+      image: '../../jsweetman/assets/images/toptal_logo.png'
+    },
+    {
+      id: 12,
+      startDate: createDate('2018-04-01'),
+      endDate: createDate('2019-12-31'),
+      title: 'Freelance UI Developer',
+      employer: 'Symon.AI',
+      description: 'While I was doing part time Toptal freelancing, I was approached by a former co-worker to join a start up, Symon.AI. I was contracted as one of the first three developers and was the sole UI Developer on Symon.AI for 2 years. Before starting on Symon.AI, I spent about a month of my spare time specing out the frontned for our new application. I prioritized quick development, ease of understanding and being fully/easily unit testable. After 1 year of part time work, I joined Symon.AI as a full time developer. We hired designers and fleshed out the behavor for our application. After two years of hardwork, we were acquired by Varicent company.',
+      descriptions: {
+        "SymonAI": 'Symon.AI is best described as a machine learnining pipeline. The frontend is built using Raect, Redux, Typescript and PostCSS. Basically, you can import data from a varity of sources (csv, GSheets, Google Ads, Google Analytics, Shopify) and then you can apply transformations and create predictive modals using your data. We can view your data at any phase of the transformations or make charts based off the data, similar to Excel. There are over 50 different tools you can use to transform your data, all which have their own forms.'
+      },
+      details: [
+        'Built and architected Symon.AI’s UI from nothing as the sole UI developer',
+        'Worked with designers to implement optimum UX experience',
+        'Developed coding standards, boilerplates, component libraries and all application features',
+        'Integrated with Sentry and LogRocket to provide a seamless experience finding and debugging application issues'
+      ],
+      type: 'full',
+      color: '#3498DB',
+      skills: [
+        {label: 'React', weight: 100},
+        {label: 'Redux', weight: 100},
+        {label: 'Typescript', weight: 100},
+        {label: 'CSS', weight: 50},
+        {label: 'PostCSS', weight: 70},
+        {label: 'Webpack', weight: 50},
+        {label: 'rxjs', weight: 60},
+        {label: 'Yarn', weight: 30},
+        {label: 'Git', weight: 20},
+        {label: 'Jest', weight: 50},
+        {label: 'Zeplin', weight: 30}
+      ],
+      image: '../../jsweetman/assets/images/IBM_logo.svg'
+    },
+    {
+      id: 13,
+      startDate: createDate('2020-01-01'),
+      endDate: createDate('2021-02-01'),   // todo get current date and use that
+      title: 'Senior UI Developer',
+      employer: 'Varicent',
+      description: `After being acquired, I continued to developer Symon.AI's UI. We scaled up the team and I guided the new UI developers as they learned Symon.AI and became contributors. The goals for Symon.AI had changed to getting 10 clients by the end of the first year and we succeeded. The team supports our clients on a daily basis using various integrations I setup, Sentry, Logrocket, Intercom, Upscope and WalkMe. Sentry is used to identify when clients encounter bugs. Logrocket is used to be help developers reproduce bugs found by QA or clients. Intercom and Upscope are used as a way for clients to contact support. WalkMe is used to provide education and tutorial on how to use Symon.AI. Symon.AI continues to grow as we're finding new ways to attract clients.`,
+      descriptions: {
+        SymonAI: 'Symon.AI continued to evolved. We built Apps within Symon where users could easily plugin their data to generate an infographic sharing statisitics and predictions of their data. I designed and built the Explain Waterfall visualization, which tells users which columns in their data are most impactful. We implemented more import connectors including SalesForce, Excel and various database connectors. User experiments were conducted to put the UX to the test. I gave users a set of tasking to complete and recorded their attempts. Using the recordings, I proposed and implemented better better UX, which resulted in new users having an improved success rate on the following runs.'
+      },
+      details: [
+        'Continuing to work on Symon.AI after being acquired',
+        'Collaborating with product management to make decisions on what features are most valuable',
+        'Responsible for hiring and onboarding new UI developers',
+        'Trained developers on React/Redux practices',
+        'Integrated with Intercom, Upscope and WalkMe to provide a premium experience educating and helping users'
+      ],
+      type: 'full',
+      color: '#3498DB',
+      skills: [
+        {label: 'React', weight: 100},
+        {label: 'Redux', weight: 100},
+        {label: 'Typescript', weight: 100},
+        {label: 'CSS', weight: 50},
+        {label: 'PostCSS', weight: 70},
+        {label: 'Webpack', weight: 50},
+        {label: 'rxjs', weight: 60},
+        {label: 'Yarn', weight: 30},
+        {label: 'Git', weight: 20},
+        {label: 'Zeplin', weight: 30}
       ],
       image: '../../jsweetman/assets/images/IBM_logo.svg'
     },
