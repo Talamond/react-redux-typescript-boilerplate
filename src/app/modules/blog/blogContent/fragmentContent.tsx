@@ -1,4 +1,5 @@
 import React, { FunctionComponent } from "react";
+import { BlogCodeBlock } from "../blogBase/blogCodeBlock";
 import { BlogParagraph } from "../blogBase/blogParagraph";
 import { BlogParagraphTitle } from "../blogBase/blogParagraphTitle";
 
@@ -13,7 +14,7 @@ export const FragmentContent: FunctionComponent = () => <>
   Action types are pretty self explanatory, it returns an object containing all action types used in your fragment. The prefix is very important because it allows a fragment to be instantiated without affecting another instance. In this simple example we only have one action.
 </BlogParagraph>
 
-<textarea rows={8} disabled className="blog-base code">
+<BlogCodeBlock rows={8}>
   {
     "export function createActionTypes(prefix = '') {\n" +
     "\treturn {\n" +
@@ -21,13 +22,13 @@ export const FragmentContent: FunctionComponent = () => <>
     "\t};\n" +
     "}\n"
   }
-</textarea>
+</BlogCodeBlock>
 <BlogParagraphTitle>Action Creator</BlogParagraphTitle>
 <BlogParagraph>
   The Action Creator takes in the actionTypes map, created from createActionTypes above. Since the action types were instantiated with a prefix, when these actions are fired they will use the given prefix.
 </BlogParagraph>
 
-<textarea rows={12} disabled className="blog-base code">
+<BlogCodeBlock rows={12}>
   {
     "export function createActions(actionTypes) {\n" +
     "\tfunction clickButton() {\n" +
@@ -41,14 +42,14 @@ export const FragmentContent: FunctionComponent = () => <>
     "\t};\n" +
     "}\n"
   }
-</textarea>
+</BlogCodeBlock>
 
 <BlogParagraphTitle>Reducer Handlers</BlogParagraphTitle>
 <BlogParagraph>
   The key difference between a regular redux reducer and fragment reducer handlers is that the fragment handlers do not actually plug themselves into the redux state. In order to use the fragment, you must plug these reducer handlers into your redux state somewhere. This allows you to instantiate many separate instances of the state, which would allow you to show multiple fragments on screen at one time if needed. It also gives the application full control over the fragment to allow easy extensibility.
 </BlogParagraph>
 
-<textarea rows={17} disabled className="blog-base code">
+<BlogCodeBlock rows={17}>
   {
     "import { createActionTypes } from './actionTypes.js';\n" +
     "\n" +
@@ -67,14 +68,14 @@ export const FragmentContent: FunctionComponent = () => <>
       "\treturn handlers;\n" +
     "};\n"
   }
-</textarea>
+</BlogCodeBlock>
 
 <BlogParagraphTitle>React Component</BlogParagraphTitle>
 <BlogParagraph>
   Finally, the last piece of the fragment is the React Component. Its just a regular React component that will take in the redux state of the fragment and actions as props. It can also take in other props as attributes.
 </BlogParagraph>
 
-<textarea rows={20} disabled className="blog-base code">
+<BlogCodeBlock rows={20}>
   {
     "class ButtonSample extends React.Component {\n" +
     "\tstatic propTypes = {\n" +
@@ -96,14 +97,14 @@ export const FragmentContent: FunctionComponent = () => <>
     "\t}\n" +
     "}\n"
   }
-</textarea>
+</BlogCodeBlock>
 
 <BlogParagraphTitle>Putting it all together</BlogParagraphTitle>
 <BlogParagraph>
   Now that we have all the pieces to the fragment we can plug it in. First we have to create a spot in the redux state for it and hook up the handlers. Generally we do this in a typical redux reducer.
 </BlogParagraph>
 
-<textarea rows={32} disabled className="blog-base code">
+<BlogCodeBlock rows={32}>
   {
     "import { attachState, executeHandlers } from 'redux-fragment';\n" +
     "import { createActionTypes } from '../fragments/buttonSample/actionTypes.js';\n" +
@@ -137,13 +138,13 @@ export const FragmentContent: FunctionComponent = () => <>
     "\treturn executeHandlers(state, action, handlers, fragments);\n" +
     "}\n"
   }
-</textarea>
+</BlogCodeBlock>
 <BlogParagraph>
   Then we have to connect our fragment React component to our actions and state we created.
 </BlogParagraph>
 
 
-<textarea rows={27} disabled className="blog-base code">
+<BlogCodeBlock rows={27}>
 {
   "import React, {PropTypes} from 'react';\n" +
   "import { connect } from 'react-redux';\n" +
@@ -172,7 +173,7 @@ export const FragmentContent: FunctionComponent = () => <>
   "\t}\n" +
   "}\n"
 }
-</textarea>
+</BlogCodeBlock>
 <BlogParagraph>
   That's it!
 </BlogParagraph>

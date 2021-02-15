@@ -19,7 +19,7 @@ interface Props {
 export const BlogBase: FunctionComponent<Props> = ({blog, nextBlog, prevBlog}: Props) => {
   const {title, date, content} = blog;
   const history = useHistory();
-  return <div className="blogBase">
+  return <div className="blogBase"><div className="blogBase__inner">
     <div className="blogBase__titleArea">
       <ProfileTile date={date} />
       <div className="blogBase__title">{title}</div>
@@ -37,5 +37,5 @@ export const BlogBase: FunctionComponent<Props> = ({blog, nextBlog, prevBlog}: P
       </a>}
       {!nextBlog && <div/>}
     </div>
-  </div>;
+  </div></div>;
 };

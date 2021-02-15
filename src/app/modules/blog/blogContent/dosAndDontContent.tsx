@@ -1,4 +1,5 @@
 import React, { FunctionComponent } from "react";
+import { BlogCodeBlock } from "../blogBase/blogCodeBlock";
 import { BlogParagraph } from "../blogBase/blogParagraph";
 import { BlogParagraphTitle } from "../blogBase/blogParagraphTitle";
 
@@ -42,7 +43,7 @@ export const DosAndDontsContent: FunctionComponent = () => <>
     Instead do all your calls in one action using promises. Sure your one actions will look complex, but at least you can tell what's going on in one method. You can optionally catch the actions fired at certain stages of your rest APIs to slowly populate data, or you can only catch the last one if you'd like! Also you can use Promise.all to run some of the calls in parallel. Check out this example using <a href="https://github.com/agraboso/redux-api-middleware">redux-api-middleware</a>.
   </BlogParagraph>
 
-  <textarea rows={33} disabled className="blog-base code">
+  <BlogCodeBlock rows={33}>
     {
       "import { CALL_API } from 'redux-api-middleware';\n" +
       "function call1() {\n" +
@@ -77,7 +78,7 @@ export const DosAndDontsContent: FunctionComponent = () => <>
       "\t};\n" +
       "}}\n"
     }
-  </textarea>
+  </BlogCodeBlock>
 
   <BlogParagraphTitle>4. Do not modify state outside the reducer</BlogParagraphTitle>
   <BlogParagraph>
@@ -101,7 +102,7 @@ export const DosAndDontsContent: FunctionComponent = () => <>
   <BlogParagraph>
     Take the following double for loop for example where we check to see if an element is in both lists and then display those elements. Every time we render we do this calculation, even if we don't change either list! We should only this when we have to (when one of the lists change).
   </BlogParagraph>
-  <textarea rows={11} disabled className="blog-base code">
+  <BlogCodeBlock rows={11}>
     {
       "render() {\n" +
       "\tconst { list1, list2 } = this.props;\n" +
@@ -114,12 +115,12 @@ export const DosAndDontsContent: FunctionComponent = () => <>
       "\treturn this.renderList(list3);\n" +
       "}"
     }
-  </textarea>
+  </BlogCodeBlock>
   <BlogParagraphTitle>Do complex loops in reducer handler</BlogParagraphTitle>
   <BlogParagraph>
     If you're fluxing right, the reducer will always know when one of the 2 lists change, so during the reducer you can decide when you must calculate list3, only once per change!
   </BlogParagraph>
-  <textarea rows={13} disabled className="blog-base code">
+  <BlogCodeBlock rows={13}>
     {
       "handlers[LIST_CHANGED] = (state, payload) => {\n" +
       "\tconst { list1, list2 } = payload;\n" +
@@ -134,7 +135,7 @@ export const DosAndDontsContent: FunctionComponent = () => <>
       "\treturn newState;\n" +
       "};"
     }
-  </textarea>
+  </BlogCodeBlock>
   <br/>
   <br/>
   <br/>

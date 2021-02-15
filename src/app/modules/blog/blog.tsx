@@ -5,7 +5,7 @@ import { BLOGS } from "./blogF";
 
 export const Blog: FunctionComponent = () => {
 
-  return <div>
+  return <>
     {BLOGS.map((blog, i) =>
       <Route
         key={blog.path}
@@ -18,5 +18,5 @@ export const Blog: FunctionComponent = () => {
           nextBlog={i + 1 < BLOGS.length ? BLOGS[i+1] : undefined}
         /> }
     />)}
-  </div>;
+  </>;
 };

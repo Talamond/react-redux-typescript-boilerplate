@@ -1,4 +1,5 @@
 import React, { FunctionComponent } from "react";
+import { BlogCodeBlock } from "../blogBase/blogCodeBlock";
 import { BlogParagraph } from "../blogBase/blogParagraph";
 import { BlogParagraphTitle } from "../blogBase/blogParagraphTitle";
 
@@ -18,7 +19,7 @@ export const TestFragmentContent: FunctionComponent = () => <>
         action at least once, and for those more problematic try and write several tests.
       </BlogParagraph>
 
-      <textarea rows={7} disabled className="blog-base code">
+      <BlogCodeBlock rows={7}>
         {
           "\tit('View to Action', () => {\n" +
           "\t\tconst button = comp.find('button');\n" +
@@ -27,7 +28,7 @@ export const TestFragmentContent: FunctionComponent = () => <>
           "\t\texpect(lastAction.type).toBe(actionTypes.CLICK_BUTTON);\n" +
           "\t});\n"
         }
-      </textarea>
+      </BlogCodeBlock>
 
       <BlogParagraphTitle>Action to Reducer</BlogParagraphTitle>
       <BlogParagraph>Here we won't use our React component at all, instead we'll fire an action
@@ -35,7 +36,7 @@ export const TestFragmentContent: FunctionComponent = () => <>
         reducer, then we can compare our result state with what the reducer function returned.
       </BlogParagraph>
 
-      <textarea rows={7} disabled className="blog-base code">
+      <BlogCodeBlock rows={7}>
         {
           "\tit('Action to Reducer', () => {\n" +
           "\t\texStore.dispatch(actions.clickButton());\n" +
@@ -44,7 +45,7 @@ export const TestFragmentContent: FunctionComponent = () => <>
           "\t\texpect(newState.text).toBe('clicked!');\n" +
           "\t});\n"
         }
-      </textarea>
+      </BlogCodeBlock>
 
       <BlogParagraph>This is a point I'd like to improve upon, since here we have to grab the
         action and then manually put it in our reducer to get the result state.
@@ -56,7 +57,7 @@ export const TestFragmentContent: FunctionComponent = () => <>
         a stateless component.
       </BlogParagraph>
 
-      <textarea rows={7} disabled className="blog-base code">
+      <BlogCodeBlock rows={7}>
         {
           "\tit('Reducer to View', () => {\n" +
           "\t\texStore = mockStore({ text: 'custom' });\n" +
@@ -65,10 +66,10 @@ export const TestFragmentContent: FunctionComponent = () => <>
           "\t\texpect(comp.find('.text').text()).toBe('custom');\n" +
           "\t});\n"
         }
-      </textarea>
+      </BlogCodeBlock>
 
       <BlogParagraphTitle>Full Example</BlogParagraphTitle>
-      <textarea rows={49} disabled className="blog-base code">
+      <BlogCodeBlock rows={49}>
         {
           "import React from 'react';\n" +
           "import { createSampleFragment } from '../src/fragments/sample/createSample.js';\n" +
@@ -119,7 +120,7 @@ export const TestFragmentContent: FunctionComponent = () => <>
           "\n" +
           "});\n"
         }
-      </textarea>
+      </BlogCodeBlock>
 
       <BlogParagraphTitle>Other tests</BlogParagraphTitle>
       <BlogParagraph>We can also create a few other types of tests. Once we instantiate our
