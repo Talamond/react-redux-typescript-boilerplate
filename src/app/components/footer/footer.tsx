@@ -38,7 +38,6 @@ export const Footer = (): JSX.Element => {
     </div>
     <div className="footer__about">
       <a className="footer__resumeLink" href="/assets/JonathanSweetmanResume.pdf">View Resume</a>
-
     </div>
   </footer>;
 };
