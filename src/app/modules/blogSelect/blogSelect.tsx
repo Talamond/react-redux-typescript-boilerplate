@@ -7,6 +7,6 @@ require('./blogSelect.css');
 
 export const BlogSelect: FunctionComponent = () => {
   return <ul className="blogSelect">
-    {BLOGS.map(blog => <BlogEntry key={blog.id} blogItem={blog} />)}
+    {BLOGS.reverse().map(blog => <BlogEntry key={blog.id} blogItem={blog} />)}
   </ul>;
 };
