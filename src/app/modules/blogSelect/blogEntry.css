@@ -8,6 +8,7 @@
   padding: 15px;
   margin-top: 20px;
   flex-direction: column;
+  width: 600px;
 }
 
 .blogEntry__title {

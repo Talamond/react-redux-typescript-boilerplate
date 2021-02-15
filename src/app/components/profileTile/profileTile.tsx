@@ -1,6 +1,7 @@
 import { momentToString } from "app/utils/dateHelper";
 import React, { FunctionComponent } from "react";
 
+require('./profileTile.css');
 interface Props {
   date: moment.Moment;
 }
