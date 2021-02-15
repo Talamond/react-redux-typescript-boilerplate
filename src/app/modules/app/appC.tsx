@@ -4,6 +4,7 @@ import React from 'react';
 import { Redirect, Route, RouteComponentProps } from 'react-router-dom';
 import { Blog } from '../blog/blog';
 import { BLOG_PATH } from '../blog/blogF';
+import { BlogSelect } from '../blogSelect/blogSelect';
 import { Timeline } from '../timeline/timeline';
 import { TIMELINE_PATH } from '../timeline/timelineF';
 
@@ -60,6 +61,7 @@ export const AppC = ({ history, location }: App.Props) => {
             <Redirect to={TIMELINE_PATH} />
         </Route>
         <Route path={TIMELINE_PATH} exact component={Timeline}/>
+        <Route path={BLOG_PATH} exact component={BlogSelect}/>
         <Route path={BLOG_PATH} component={Blog}/>
       </div>
       <Footer/>
