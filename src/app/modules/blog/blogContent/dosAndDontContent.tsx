@@ -47,35 +47,35 @@ export const DosAndDontsContent: FunctionComponent = () => <>
     {
       "import { CALL_API } from 'redux-api-middleware';\n" +
       "function call1() {\n" +
-      "\treturn (dispatch) => {\n" +
-      "\t\treturn dispatch(\n" +
-      "\t\t\t[CALL_API]: {\n" +
-      "\t\t\t\tendpoint: 'http://fake1.com'\n" +
-      "\t\t\t\tmethod: 'GET',\n" +
-      "\t\t\t\theaders: {'Content-Type': 'application/json'}\n" +
-      "\t\t\t\ttypes: [\n" +
-      "\t\t\t\t\t'API_1_REQUEST',\n" +
-      "\t\t\t\t\t'API_2_SUCCESS',\n" +
-      "\t\t\t\t\t'API_2_FAILURE',\n" +
-      "\t\t\t\t]\n" +
-      "\t\t\t}\n" +
-      "\t\t);\n" +
-      "\t}\n" +
+      "  return (dispatch) => {\n" +
+      "    return dispatch(\n" +
+      "      [CALL_API]: {\n" +
+      "        endpoint: 'http://fake1.com'\n" +
+      "        method: 'GET',\n" +
+      "        headers: {'Content-Type': 'application/json'}\n" +
+      "        types: [\n" +
+      "          'API_1_REQUEST',\n" +
+      "          'API_2_SUCCESS',\n" +
+      "          'API_2_FAILURE',\n" +
+      "        ]\n" +
+      "      }\n" +
+      "    );\n" +
+      "  }\n" +
       "}\n" +
       "function call2() {\n" +
-      "\t...\n" +
+      "  ...\n" +
       "}\n" +
       "function call3() {\n" +
-      "\t...\n" +
+      "  ...\n" +
       "}\n" +
       "function chainAPI() {\n" +
-      "\treturn dispatch => {\n" +
-      "\t\tconst call1Dispatch = dispatch(call1);\n" +
-      "\t\tconst call2Dispatch = dispatch(call2);\n" +
-      "\t\tPromise.all([call1Dispatch, call2Dispatch]).then(() => {\n" +
-      "\t\t\tdispatch(call3);\n" +
-      "\t\t}, () => {});\n" +
-      "\t};\n" +
+      "  return dispatch => {\n" +
+      "    const call1Dispatch = dispatch(call1);\n" +
+      "    const call2Dispatch = dispatch(call2);\n" +
+      "    Promise.all([call1Dispatch, call2Dispatch]).then(() => {\n" +
+      "      dispatch(call3);\n" +
+      "    }, () => {});\n" +
+      "  };\n" +
       "}}\n"
     }
   </BlogCodeBlock>
@@ -105,14 +105,14 @@ export const DosAndDontsContent: FunctionComponent = () => <>
   <BlogCodeBlock rows={11}>
     {
       "render() {\n" +
-      "\tconst { list1, list2 } = this.props;\n" +
-      "\tconst list3 = [];\n" +
-      "\t_.forEach(list1, (elem1) => {\n" +
-      "\t\t_.forEach(list2, (elem2) => {\n" +
-      "\t\t\tif (elem1.id === elem2.id) list3.push(elem1);\n" +
-      "\t\t});\n" +
-      "\t});\n" +
-      "\treturn this.renderList(list3);\n" +
+      "  const { list1, list2 } = this.props;\n" +
+      "  const list3 = [];\n" +
+      "  _.forEach(list1, (elem1) => {\n" +
+      "    _.forEach(list2, (elem2) => {\n" +
+      "      if (elem1.id === elem2.id) list3.push(elem1);\n" +
+      "    });\n" +
+      "  });\n" +
+      "  return this.renderList(list3);\n" +
       "}"
     }
   </BlogCodeBlock>
@@ -123,16 +123,16 @@ export const DosAndDontsContent: FunctionComponent = () => <>
   <BlogCodeBlock rows={13}>
     {
       "handlers[LIST_CHANGED] = (state, payload) => {\n" +
-      "\tconst { list1, list2 } = payload;\n" +
-      "\tconst list3 = [];\n" +
-      "\t_.forEach(list1, (elem1) => {\n" +
-      "\t\t_.forEach(list2, (elem2) => {\n" +
-      "\t\t\tif (elem1.id === elem2.id) list3.push(elem1);\n" +
-      "\t\t});\n" +
-      "\t});\n" +
-      "\tconst newState = {...state);\n" +
-      "\tnewState.list3 = list3;\n" +
-      "\treturn newState;\n" +
+      "  const { list1, list2 } = payload;\n" +
+      "  const list3 = [];\n" +
+      "  _.forEach(list1, (elem1) => {\n" +
+      "    _.forEach(list2, (elem2) => {\n" +
+      "      if (elem1.id === elem2.id) list3.push(elem1);\n" +
+      "    });\n" +
+      "  });\n" +
+      "  const newState = {...state);\n" +
+      "  newState.list3 = list3;\n" +
+      "  return newState;\n" +
       "};"
     }
   </BlogCodeBlock>

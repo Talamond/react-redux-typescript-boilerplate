@@ -17,9 +17,9 @@ export const FragmentContent: FunctionComponent = () => <>
 <BlogCodeBlock rows={8}>
   {
     "export function createActionTypes(prefix = '') {\n" +
-    "\treturn {\n" +
-    "\t\tCLICK_BUTTON: `${prefix}CLICK_BUTTON`\n" +
-    "\t};\n" +
+    "  return {\n" +
+    "    CLICK_BUTTON: `${prefix}CLICK_BUTTON`\n" +
+    "  };\n" +
     "}\n"
   }
 </BlogCodeBlock>
@@ -31,15 +31,15 @@ export const FragmentContent: FunctionComponent = () => <>
 <BlogCodeBlock rows={12}>
   {
     "export function createActions(actionTypes) {\n" +
-    "\tfunction clickButton() {\n" +
-    "\t\treturn {\n" +
-    "\t\t\ttype: actionTypes.CLICK_BUTTON,\n" +
-    "\t\t\tpayload: {}\n" +
-    "\t\t};\n" +
-    "\t}\n" +
-    "\treturn {\n" +
-    "\t\tclickButton\n" +
-    "\t};\n" +
+    "  function clickButton() {\n" +
+    "    return {\n" +
+    "      type: actionTypes.CLICK_BUTTON,\n" +
+    "      payload: {}\n" +
+    "    };\n" +
+    "  }\n" +
+    "  return {\n" +
+    "    clickButton\n" +
+    "  };\n" +
     "}\n"
   }
 </BlogCodeBlock>
@@ -54,18 +54,18 @@ export const FragmentContent: FunctionComponent = () => <>
     "import { createActionTypes } from './actionTypes.js';\n" +
     "\n" +
     "export const initialState = {\n" +
-      "\tshowText: '',\n" +
+      "  showText: '',\n" +
     "};\n" +
     "\n" +
     "export const createHandlers = (prefix) => {\n" +
-      "\tconst actionTypes = TimelineActionTypes.createActionTypes(prefix);\n" +
-      "\tconst handlers = {};\n" +
-      "\thandlers[actionTypes.CLICK_BUTTON] = (state, payload) => {\n" +
-        "\t\tconst newState = {...state);\n" +
-        "\t\tnewState.showPopup = 'text';\n" +
-        "\t\treturn newState;\n" +
-      "\t};\n" +
-      "\treturn handlers;\n" +
+      "  const actionTypes = TimelineActionTypes.createActionTypes(prefix);\n" +
+      "  const handlers = {};\n" +
+      "  handlers[actionTypes.CLICK_BUTTON] = (state, payload) => {\n" +
+        "    const newState = {...state);\n" +
+        "    newState.showPopup = 'text';\n" +
+        "    return newState;\n" +
+      "  };\n" +
+      "  return handlers;\n" +
     "};\n"
   }
 </BlogCodeBlock>
@@ -78,23 +78,23 @@ export const FragmentContent: FunctionComponent = () => <>
 <BlogCodeBlock rows={20}>
   {
     "class ButtonSample extends React.Component {\n" +
-    "\tstatic propTypes = {\n" +
-    "\t\tbuttonSample: PropTypes.object, // state\n" +
-    "\t\ttitle: PropTypes.string, // component attribute\n" +
-    "\t\tclickButton: PropTypes.func, // action\n" +
-    "\t};\n" +
+    "  static propTypes = {\n" +
+    "    buttonSample: PropTypes.object, // state\n" +
+    "    title: PropTypes.string, // component attribute\n" +
+    "    clickButton: PropTypes.func, // action\n" +
+    "  };\n" +
     "\n" +
-    "\trenderButton() {\n" +
-    "\t\treturn <button onClick={() => this.props.clickButton()}>ClickMe</button>;\n" +
-    "\t}\n" +
-    "\trender() {\n" +
-    "\t\treturn (\n" +
-    "\t\t\t<div>\n" +
-    "\t\t\t\t<span>{this.props.title}</span>\n" +
-    "\t\t\t\t<span>{this.props.sample.text}</span>\n" +
-    "\t\t\t</BlogParagraph>\n" +
-    "\t\t);\n" +
-    "\t}\n" +
+    "  renderButton() {\n" +
+    "    return <button onClick={() => this.props.clickButton()}>ClickMe</button>;\n" +
+    "  }\n" +
+    "  render() {\n" +
+    "    return (\n" +
+    "      <div>\n" +
+    "        <span>{this.props.title}</span>\n" +
+    "        <span>{this.props.sample.text}</span>\n" +
+    "      </BlogParagraph>\n" +
+    "    );\n" +
+    "  }\n" +
     "}\n"
   }
 </BlogCodeBlock>
@@ -114,28 +114,28 @@ export const FragmentContent: FunctionComponent = () => <>
     "export const prefix = 'SAMPLE__';\n" +
     "\n" +
     "const fragments = {\n" +
-    "\tbuttonSample: {\n" +
-    "\t\tinitialState: {\n" +
-    "\t\t\t...initialState\n" +
-    "\t\t},\n" +
-    "\t\thandlers: {\n" +
-    "\t\t\t...createHandlers(prefix)\n" +
-    "\t\t}\n" +
-    "\t}\n" +
+    "  buttonSample: {\n" +
+    "    initialState: {\n" +
+    "      ...initialState\n" +
+    "    },\n" +
+    "    handlers: {\n" +
+    "      ...createHandlers(prefix)\n" +
+    "    }\n" +
+    "  }\n" +
     "};\n" +
     "\n" +
     "const initialState = {\n" +
-    "\troot: {}\n" +
+    "  root: {}\n" +
     "};\n" +
     "\n" +
     "const handlers = {};\n" +
     "const getInitialState = () => {\n" +
-    "\treturn attachState(initialState, fragments);\n" +
+    "  return attachState(initialState, fragments);\n" +
     "};\n" +
     "\n" +
     "// This function is hooked up to redux store\n" +
     "export function sample(state = getInitialState(), action) {\n" +
-    "\treturn executeHandlers(state, action, handlers, fragments);\n" +
+    "  return executeHandlers(state, action, handlers, fragments);\n" +
     "}\n"
   }
 </BlogCodeBlock>
@@ -155,22 +155,22 @@ export const FragmentContent: FunctionComponent = () => <>
   "import { initialState, createHandlers } from '../fragments/buttonSample/reducerHandlers.js';\n" +
   "\n" +
   "export class SampleContainer extends React.Component {\n" +
-  "\tstatic propTypes = {\n" +
-  "\t};\n" +
+  "  static propTypes = {\n" +
+  "  };\n" +
   "\n" +
-  "\tcomponentWillMount() {\n" +
-  "\t\tconst enhance = connect({\n" +
-  "\t\t\t\tbuttonSample: (store) => store.sample.fragments.buttonSample\n" +
-  "\t\t\t}, createActions(createActionTypes(prefix)));\n" +
-  "\t\tthis.ButtonFragment = enhance(ButtonSample);\n" +
-  "\t}\n" +
+  "  componentWillMount() {\n" +
+  "    const enhance = connect({\n" +
+  "        buttonSample: (store) => store.sample.fragments.buttonSample\n" +
+  "      }, createActions(createActionTypes(prefix)));\n" +
+  "    this.ButtonFragment = enhance(ButtonSample);\n" +
+  "  }\n" +
   "\n" +
-  "\trender() {\n" +
-  "\t\tconst ButtonFragment = this.ButtonFragment;\n" +
-  "\t\treturn (\n" +
-  "\t\t\t<ButtonFragment title=\"Button Fragment\"/>\n" +
-  "\t\t);\n" +
-  "\t}\n" +
+  "  render() {\n" +
+  "    const ButtonFragment = this.ButtonFragment;\n" +
+  "    return (\n" +
+  "      <ButtonFragment title=\"Button Fragment\"/>\n" +
+  "    );\n" +
+  "  }\n" +
   "}\n"
 }
 </BlogCodeBlock>

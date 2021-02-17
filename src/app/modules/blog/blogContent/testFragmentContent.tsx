@@ -21,12 +21,12 @@ export const TestFragmentContent: FunctionComponent = () => <>
 
       <BlogCodeBlock rows={7}>
         {
-          "\tit('View to Action', () => {\n" +
-          "\t\tconst button = comp.find('button');\n" +
-          "\t\tbutton.simulate('click');\n" +
-          "\t\tconst lastAction = exStore.getActions()[0];\n" +
-          "\t\texpect(lastAction.type).toBe(actionTypes.CLICK_BUTTON);\n" +
-          "\t});\n"
+          "  it('View to Action', () => {\n" +
+          "    const button = comp.find('button');\n" +
+          "    button.simulate('click');\n" +
+          "    const lastAction = exStore.getActions()[0];\n" +
+          "    expect(lastAction.type).toBe(actionTypes.CLICK_BUTTON);\n" +
+          "  });\n"
         }
       </BlogCodeBlock>
 
@@ -38,12 +38,12 @@ export const TestFragmentContent: FunctionComponent = () => <>
 
       <BlogCodeBlock rows={7}>
         {
-          "\tit('Action to Reducer', () => {\n" +
-          "\t\texStore.dispatch(actions.clickButton());\n" +
-          "\t\tconst lastAction = exStore.getActions()[0];\n" +
-          "\t\tconst newState = handlers[lastAction.type](exStore.getState(), lastAction.payload);\n" +
-          "\t\texpect(newState.text).toBe('clicked!');\n" +
-          "\t});\n"
+          "  it('Action to Reducer', () => {\n" +
+          "    exStore.dispatch(actions.clickButton());\n" +
+          "    const lastAction = exStore.getActions()[0];\n" +
+          "    const newState = handlers[lastAction.type](exStore.getState(), lastAction.payload);\n" +
+          "    expect(newState.text).toBe('clicked!');\n" +
+          "  });\n"
         }
       </BlogCodeBlock>
 
@@ -59,12 +59,12 @@ export const TestFragmentContent: FunctionComponent = () => <>
 
       <BlogCodeBlock rows={7}>
         {
-          "\tit('Reducer to View', () => {\n" +
-          "\t\texStore = mockStore({ text: 'custom' });\n" +
-          "\t\tconst Sample = createSampleFragment(s => s, prefix);\n" +
-          "\t\tcomp = mount(<Provider store={exStore}><Sample/></Provider>);\n" +
-          "\t\texpect(comp.find('.text').text()).toBe('custom');\n" +
-          "\t});\n"
+          "  it('Reducer to View', () => {\n" +
+          "    exStore = mockStore({ text: 'custom' });\n" +
+          "    const Sample = createSampleFragment(s => s, prefix);\n" +
+          "    comp = mount(<Provider store={exStore}><Sample/></Provider>);\n" +
+          "    expect(comp.find('.text').text()).toBe('custom');\n" +
+          "  });\n"
         }
       </BlogCodeBlock>
 
@@ -87,36 +87,36 @@ export const TestFragmentContent: FunctionComponent = () => <>
           "const prefix = 'TEST__';\n" +
           "\n" +
           "describe('Example Tests', () => {\n" +
-          "\tlet exStore, handlers, actionTypes, actions, comp;\n" +
-          "\tbeforeEach(() => {\n" +
-          "\t\tactionTypes = createActionTypes(prefix);\n" +
-          "\t\tactions = createActionCreators(actionTypes);\n" +
-          "\t\texStore = mockStore({ ...initialState });\n" +
-          "\t\thandlers = createHandlers(prefix);\n" +
-          "\t\tconst Sample = createSampleFragment(s => s, prefix);\n" +
-          "\t\tcomp = mount(<Provider store={exStore}><Sample/></Provider>);\n" +
-          "\t});\n" +
+          "  let exStore, handlers, actionTypes, actions, comp;\n" +
+          "  beforeEach(() => {\n" +
+          "    actionTypes = createActionTypes(prefix);\n" +
+          "    actions = createActionCreators(actionTypes);\n" +
+          "    exStore = mockStore({ ...initialState });\n" +
+          "    handlers = createHandlers(prefix);\n" +
+          "    const Sample = createSampleFragment(s => s, prefix);\n" +
+          "    comp = mount(<Provider store={exStore}><Sample/></Provider>);\n" +
+          "  });\n" +
           "\n" +
-          "\tit('View to Action', () => {\n" +
-          "\t\tconst button = comp.find('button');\n" +
-          "\t\tbutton.simulate('click');\n" +
-          "\t\tconst lastAction = exStore.getActions()[0];\n" +
-          "\t\texpect(lastAction.type).toBe(actionTypes.CLICK_BUTTON);\n" +
-          "\t});\n" +
+          "  it('View to Action', () => {\n" +
+          "    const button = comp.find('button');\n" +
+          "    button.simulate('click');\n" +
+          "    const lastAction = exStore.getActions()[0];\n" +
+          "    expect(lastAction.type).toBe(actionTypes.CLICK_BUTTON);\n" +
+          "  });\n" +
           "\n" +
-          "\tit('Action to Reducer', () => {\n" +
-          "\t\texStore.dispatch(actions.clickButton());\n" +
-          "\t\tconst lastAction = exStore.getActions()[0];\n" +
-          "\t\tconst newState = handlers[lastAction.type](exStore.getState(), lastAction.payload);\n" +
-          "\t\texpect(newState.text).toBe('clicked!');\n" +
-          "\t});\n" +
+          "  it('Action to Reducer', () => {\n" +
+          "    exStore.dispatch(actions.clickButton());\n" +
+          "    const lastAction = exStore.getActions()[0];\n" +
+          "    const newState = handlers[lastAction.type](exStore.getState(), lastAction.payload);\n" +
+          "    expect(newState.text).toBe('clicked!');\n" +
+          "  });\n" +
           "\n" +
-          "\tit('Reducer to View', () => {\n" +
-          "\t\texStore = mockStore({ text: 'custom' });\n" +
-          "\t\tconst Sample = createSampleFragment(s => s, prefix);\n" +
-          "\t\tcomp = mount(<Provider store={exStore}><Sample/></Provider>);\n" +
-          "\t\texpect(comp.find('.text').text()).toBe('custom');\n" +
-          "\t});\n" +
+          "  it('Reducer to View', () => {\n" +
+          "    exStore = mockStore({ text: 'custom' });\n" +
+          "    const Sample = createSampleFragment(s => s, prefix);\n" +
+          "    comp = mount(<Provider store={exStore}><Sample/></Provider>);\n" +
+          "    expect(comp.find('.text').text()).toBe('custom');\n" +
+          "  });\n" +
           "\n" +
           "});\n"
         }

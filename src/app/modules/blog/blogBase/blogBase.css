@@ -37,6 +37,10 @@
   margin: 0 var(--edgePadding) 10px 0;
 }
 
+.blogBase__nextText {
+  text-align: right;
+}
+
 .blogBase__title {
   font-size: 32px;
   font-weight: bold;

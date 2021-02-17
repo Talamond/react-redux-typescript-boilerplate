@@ -32,7 +32,7 @@ export const BlogBase: FunctionComponent<Props> = ({blog, nextBlog, prevBlog}: P
       </a>}
       {!prevBlog && <div/>}
       {nextBlog && <a className="blogBase__nextArea" onClick={(e) => navigate(e, nextBlog.path, history)}>
-        <span>{nextBlog.title}</span>
+        <span className="blogBase__nextText">{nextBlog.title}</span>
         <ArrowRight />
       </a>}
       {!nextBlog && <div/>}
