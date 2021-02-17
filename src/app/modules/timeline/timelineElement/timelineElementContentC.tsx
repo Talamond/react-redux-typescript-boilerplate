@@ -23,7 +23,7 @@ export interface Props {
 
 export const TimelineElementContent = (props: Props) => {
   const dispatch = useDispatch();
-  const {timelineElem: {skills, description, descriptions, details, id, image}, selectedTab} = props;
+  const {timelineElem: {skills, description, descriptions, details, id, image, imageWidth}, selectedTab} = props;
   const {width} = useWindowSize();
   let fontSize = 22;
   let maxLength = 750;
@@ -64,7 +64,7 @@ export const TimelineElementContent = (props: Props) => {
     });
   }
   return <>
-    {width! >= NO_IMAGE_WIDTH && <img src={image} className={`timelineElementContent__image id${id} ${isIE ? 'ie' : 'notIe'}`} />}
+    {width! >= NO_IMAGE_WIDTH && <img src={image} style={imageWidth ? {width: imageWidth} : undefined} className={`timelineElementContent__image id${id} ${isIE ? 'ie' : 'notIe'}`} />}
     <TabArea tabContents={tabContents} selectedTab={selectedTab} onTabSelect={(tabIndex) => dispatch(new SelectTab(id, tabIndex) as any)}/>
   </>;
 };

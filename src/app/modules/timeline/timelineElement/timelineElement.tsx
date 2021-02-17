@@ -1,4 +1,4 @@
-import { momentToString } from '../../../utils/dateHelper';
+import { momentToMonthString } from '../../../utils/dateHelper';
 import cn from 'classnames';
 import React from 'react';
 import { TimelineElementI } from '../timelineF.js';
@@ -19,7 +19,7 @@ export const TimelineElement = (props: Props) => {
   return <div className={cn('timelineElement', timelineType)}>
     <h1 className="timelineElement__jobTitle">{timelineElem.title}</h1>
     <h2 className="timelineElement__employer">{timelineElem.employer}</h2>
-    <h3 className="timelineElement__startEndDates">{momentToString(timelineElem.startDate)} - {momentToString(timelineElem.endDate)}</h3>
+    <h3 className="timelineElement__startEndDates">{momentToMonthString(timelineElem.startDate)} - {momentToMonthString(timelineElem.endDate)}</h3>
     <div className={cn("timelineElement__contentWrapper", timelineElem.type, timelineType)}>
       <TimelineElementContent selectedTab={selectedTab} timelineType={timelineType} timelineElem={timelineElem}/>
     </div>

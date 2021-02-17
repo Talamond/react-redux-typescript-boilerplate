@@ -223,7 +223,7 @@ export function getResumeData(): TimelineElementI[] {
     },
     {
       id: 10,
-      startDate: createDate('2015-09-01'),
+      startDate: createDate('2015-08-31'),
       endDate: createDate('2017-03-31'),
       title: 'Lead UI Architect',
       employer: 'IBM Canada',
@@ -285,7 +285,8 @@ export function getResumeData(): TimelineElementI[] {
         {label: 'Git', weight: 20},
         {label: 'Sketch', weight: 20}
       ],
-      image: '../../jsweetman/assets/images/toptal_logo.png'
+      image: '../../jsweetman/assets/images/toptal_logo2.png',
+      imageWidth: 400
     },
     {
       id: 12,
@@ -318,7 +319,7 @@ export function getResumeData(): TimelineElementI[] {
         {label: 'Jest', weight: 50},
         {label: 'Zeplin', weight: 30}
       ],
-      image: '../../jsweetman/assets/images/IBM_logo.svg'
+      image: '../../jsweetman/assets/images/symon_logo.svg'
     },
     {
       id: 13,
@@ -351,7 +352,7 @@ export function getResumeData(): TimelineElementI[] {
         {label: 'Git', weight: 20},
         {label: 'Zeplin', weight: 30}
       ],
-      image: '../../jsweetman/assets/images/IBM_logo.svg'
+      image: '../../jsweetman/assets/images/varicent_logo.png'
     },
   ];
 }

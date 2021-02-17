@@ -19,6 +19,7 @@ export interface TimelineElementI {
   type: string;
   color: string;
   image: any; // todo: maybe image path
+  imageWidth?: number;
   skills?: Skill[];
   details?: string[];
   description?: string;
