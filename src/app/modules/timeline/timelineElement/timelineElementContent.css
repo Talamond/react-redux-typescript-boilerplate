@@ -24,13 +24,10 @@
   color: var(--mainText);
   font-style: italic;
   text-align: center;
-  @media --mobile {
+  @media only screen and (max-width: 479px) {
     font-size: 15px;
   }
-  @media --pad {
-    font-size: 22px;
-  }
-  @media --desktop {
+  @media only screen and (min-width: 480px) {
     font-size: 22px;
   }
 }

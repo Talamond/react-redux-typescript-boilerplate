@@ -1,4 +1,5 @@
 import { Skill } from 'app/modules/timeline/timelineF';
+import { checkDeviceSize } from 'app/utils/responsiveHelper';
 import React, {useState, useEffect} from 'react';
 import ReactWordcloud from 'react-wordcloud';
 
@@ -36,7 +37,7 @@ const colors = ['#f5222d', '#fa541c', '#fa8c16', '#faad14', '#fadb14', '#a0d911'
 const options = {
   fontFamily: 'HelveticaNeue-CondensedBlack',
   fontWeight: 'bold',
-  fontSizes: [20,70],
+  fontSizes: [5,70],
   enableTooltip: false,
   padding: 0,
   rotations: 1,
@@ -67,12 +68,15 @@ const callbacks = {
 export const TagCloud = (props: Props) => {
   const {isBig, data} = props;
   const [wordElems, setWordElems] = useState<WordElem[]>([]);
-
+  let big = isBig;
+  if (checkDeviceSize() === 'mobile') {
+    big = false;
+  }
   useEffect(() => {
     setWordElems(createWords(props));
   }, [data]);
   if (wordElems.length > 0) {
-    return <ReactWordcloud words={wordElems} options={isBig ? bigOptions : options as any} callbacks={callbacks}/>;
+    return <ReactWordcloud words={wordElems} options={big ? bigOptions : options as any} callbacks={callbacks}/>;
   }
   return null;
 };

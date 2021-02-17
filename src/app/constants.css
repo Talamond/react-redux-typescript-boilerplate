@@ -32,6 +32,7 @@
   --desktopMinWidth: 768px;
 }
 
+/* Todo: fix postcss custom media and use this */
 @custom-media --mobile (max-width: 479px);
 @custom-media --pad (min-width: 480px) and (max-width: 767px);
 @custom-media --desktop (min-width: 768px);

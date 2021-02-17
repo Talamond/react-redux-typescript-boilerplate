@@ -17,15 +17,7 @@
   margin: 0 auto;
   border-radius: 50%;
   width: 25vw;
-  @media --mobile {
-    border: 2px solid $neutral;
-  }
-  @media --pad {
-    border: 3px solid $neutral;
-  }
-  @media -desktop {
-    border: 5px solid $neutral;
-  }
+  border: 2px solid var(--neutral);
 }
 
 .profileArea__title {
