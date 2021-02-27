@@ -23,8 +23,8 @@ export interface Props {
 
 export const TimelineElementContent = (props: Props) => {
   const dispatch = useDispatch();
-  const {timelineElem: {skills, description, descriptions, details, id, image, imageWidth}, selectedTab} = props;
   const {width} = useWindowSize();
+  const {timelineElem: {skills, description, descriptions, details, id, image, imageWidth}, selectedTab} = props;
   let fontSize = 22;
   let maxLength = 750;
   let divisor = 50;
@@ -39,15 +39,15 @@ export const TimelineElementContent = (props: Props) => {
   const tabContents = [
     {
       name: 'Details',
-      content: <div className="timelineElementContent__details">
+      content: <ul className="timelineElementContent__details">
         {details && details.map((detail, index) => {
           return (
             <OnVisible key={index} visibleClassName="animate-detail">
-              <div key={index} className="timelineElementContent__detail">{detail}</div>
+              <li key={index} className="timelineElementContent__detail">{detail}</li>
             </OnVisible>
           );
         })}
-      </div>
+      </ul>
     },
     {
       name: 'Skills',

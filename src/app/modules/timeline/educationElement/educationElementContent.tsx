@@ -1,6 +1,7 @@
 import React from 'react';
 import { momentToString } from 'app/utils/dateHelper';
 import { TimelineElementI } from '../timelineF';
+import { useWindowSize } from 'app/utils/hooks/useWindowSize';
 
 require('./educationElementContent.css');
 

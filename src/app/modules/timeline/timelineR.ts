@@ -1,5 +1,5 @@
 import { isActionType, Reducer } from "jsweetman-redux-typed";
-import { AddTag, FetchData, RemoveTag, SelectTab } from "./timelineA";
+import { FetchData, SelectTab } from "./timelineA";
 import { Skill, TimelineElementI } from "./timelineF";
 import _ from 'lodash';
 
@@ -11,32 +11,18 @@ export interface TimelineState {
   skillMap: {
     [skillLabel: string]: number;
   },
-  allSkills: Skill[]
-  tags: string[];
+  allSkills: Skill[];
 }
 
 const getInitialState = (): TimelineState => {
   return {
     selectedTabs: {},
     skillMap: {},
-    allSkills: [],
-    tags: []
+    allSkills: []
   };
 };
 
 export const timelineReducer: Reducer<TimelineState> = (state, action) => {
-  if (isActionType(action, AddTag)) {
-    const newState = {...state};
-    newState.tags = [...state.tags];
-    newState.tags.push(action.tag);
-    return newState;
-  }
-  if (isActionType(action, RemoveTag)) {
-    const newState = {...state};
-    newState.tags = [...state.tags];
-    newState.tags.splice(action.index, 1);
-    return newState;
-  }
 
 	if (isActionType(action, SelectTab)) {
     const newState = {...state};

@@ -13,8 +13,8 @@ export const ProfileArea = () => {
         <img src="/jsweetman/assets/images/me.jpeg" className="profileArea__jon" />
       </div>
       <div className="profileArea__title">
-        <div>Jonathan Sweetman</div>
-        <div>Front-end Developer</div>
+        <h1>Jonathan Sweetman</h1>
+        <h2>Front-end Developer</h2>
       </div>
     </div>
   </div>

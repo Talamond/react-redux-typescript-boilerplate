@@ -4,6 +4,7 @@ import { TimelineElementI } from '../timelineF';
 import ProgressiveImage from 'react-progressive-image';
 import { Responsive } from 'app/components/responsive/responsive';
 import { EducationElementContent } from './educationElementContent';
+import { useWindowSize } from 'app/utils/hooks/useWindowSize';
 require('./educationElement.css');
 
 export interface Props {
@@ -11,6 +12,7 @@ export interface Props {
 }
 
 export const EducationElement: FunctionComponent<Props> = (props: Props) => {
+  const {width} = useWindowSize();
   let schoolImage = '/jsweetman/assets/images/UW_Building-mobile.jpg';
   let schoolImageSmall = '/jsweetman/assets/images/UWsmallMobile.jpg';
   if (checkDeviceSize() === 'mobile') {

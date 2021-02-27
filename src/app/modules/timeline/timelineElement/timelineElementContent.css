@@ -24,6 +24,7 @@
   color: var(--mainText);
   font-style: italic;
   text-align: center;
+  list-style-type: none;
   @media only screen and (max-width: 479px) {
     font-size: 15px;
   }
