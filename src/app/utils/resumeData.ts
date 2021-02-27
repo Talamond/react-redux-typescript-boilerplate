@@ -76,7 +76,7 @@ export function getResumeData(): TimelineElementI[] {
         'Contributed in application design sessions',
         'Fixed various types of bugs for various applications'
       ],
-      description: 'SQLPower has a variety of tools related to Database Management that supports all popular types of databases. Here I mostly worked on the front end for these applications, which were multi platform Java applications built using Swing UI. At SQLPower, we also practiced pair programming. I can\'t say I was a huge fan of that...',
+      description: 'SQLPower has a variety of tools related to Database Management that supports all popular types of databases. Here I mostly worked on the front end for these applications, which were multi platform Java applications built using Swing UI. At SQLPower, we also practiced pair programming.',
       type: 'coop',
       color: '#229954',
       skills: [

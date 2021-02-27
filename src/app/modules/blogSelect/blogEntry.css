@@ -30,6 +30,7 @@
   align-self: flex-end;
   color: var(--mainText);
   cursor: pointer;
+  font-weight: bold;
 }
 
 .blogEntry__showMore:hover {

@@ -38,7 +38,7 @@ export const TimelineElementContent = (props: Props) => {
   }
   const tabContents = [
     {
-      name: 'Details',
+      name: 'Summary',
       content: <ul className="timelineElementContent__details">
         {details && details.map((detail, index) => {
           return (
@@ -54,7 +54,7 @@ export const TimelineElementContent = (props: Props) => {
       content: <TagCloud id={`${id}`} data={skills ?? []}/>
     },
     {
-      name: 'Info',
+      name: 'Details',
       content: <div className="timelineElementContent__description" style={{fontSize: fontSize + 'px'}}>{description}</div>
     }
   ];

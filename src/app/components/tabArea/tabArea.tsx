@@ -22,10 +22,10 @@ export const TabArea = (props: Props) => {
         <div className="tabArea__tabs">
           {tabContents.map((tabContent, index) => {
             const selected = index === selectedTab;
-            return <div key={index} className={cn("tabArea__tab", {selected})} onClick={() => props.onTabSelect(index)}>
+            return <button key={index} className={cn("tabArea__tab", {selected})} onClick={() => props.onTabSelect(index)}>
               {tabContent.name}
               {selected && <div className="tabArea__selectedLine"/>}
-            </div>;
+            </button>;
           })}
         </div>
       </OnVisible>
