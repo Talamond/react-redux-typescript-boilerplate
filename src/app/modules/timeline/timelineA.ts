@@ -22,3 +22,19 @@ export class ChangeDimensions extends Action {
 		super();
 	}
 }
+
+
+
+@typeName(`ADD_TAG${SUFFIX}`)
+export class AddTag extends Action {
+  constructor(public tag: string) {
+    super();
+  }
+}
+
+@typeName(`REMOVE_TAG${SUFFIX}`)
+export class RemoveTag extends Action {
+  constructor(public index: number) {
+    super();
+  }
+}
